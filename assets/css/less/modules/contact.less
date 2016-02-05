@@ -1,0 +1,46 @@
+&.contact{
+	background: @color-gray;
+	border-top: 1px solid @color-borders;
+	border-bottom: 1px solid @color-borders;
+
+	form{
+		.clear;
+
+		fieldset{
+			float: left;
+			width: 70%;
+			.clear;
+
+			legend{
+				margin: 1vw 0;
+			}
+
+			> div{
+				.clear;
+
+				.info, .message{
+					float: left;
+					width: 50%;
+				}
+
+				.info{
+					box-sizing: border-box;
+    				padding-right: 10%;
+				}
+			}
+
+			.send{
+				.clear;
+
+				button{
+					float:right;
+				}
+			}
+		}
+
+		figure{
+		    float: right;
+    		width: 25%;
+		}
+	}
+}

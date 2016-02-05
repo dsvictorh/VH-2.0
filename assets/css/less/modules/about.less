@@ -1,0 +1,77 @@
+&.about{
+	background: @color-blue;
+	border-top: 1px solid @color-borders;
+	border-bottom: 1px solid @color-borders;
+
+	article{
+		margin-bottom: 10vh;
+	}
+
+	header{
+		margin-bottom: 2vh;
+
+		&.code{
+			.awesome-icon('\f121', before, 1.3vw, @margin-right: 1vw);
+		}
+
+		&.game{
+			.awesome-icon('\f11b', before, 1.3vw, @margin-right: 1vw);
+		}
+
+		h3{
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+
+	.stats{
+		margin-left: 2.7vw;
+
+		li{
+			margin-bottom: 1vw;
+		}
+
+		.meter{
+			.clear;
+
+			div{
+				height: 1.5vw;
+			    width: 80%;
+			    float: left;
+			    position: relative;
+			    cursor: pointer;
+				.shadow-box;
+
+				&:before{
+					background: blue;
+					float:left;
+					height: 100%;
+					content: '';
+				}
+
+				span{
+					position: absolute;
+					line-height: 1.6vw;
+
+					&.description{
+						left: 5px;
+					}
+
+					&.percentage{
+						right: 5px;
+					}
+				}
+			}  
+		}
+
+		.result{
+			line-height: 1.6vw;
+			float: right;
+		}
+
+		.details{
+		    padding: 1vw;
+		    width: 75%;
+		}
+	}
+}
