@@ -5,15 +5,19 @@
 		<meta name="description" content="Senior Web Developer and Software Engineer Lead. Fan of simplistic yet astonishing digital solutions"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta charset="utf-8" /> 
-		<link rel="icon" href="assets/img/favicon.ico" />
-		<link rel="stylesheet" href="assets/css/site.css" />
+		<link rel="icon" href="/img/favicon.ico" />
+		<link rel="stylesheet" href="/css/site.css" />
+
+		{{!-- This file provides the default styling for the KeystoneJS Content Editor
+			- only renders when user is logged in and admin--}}
+		{{{isAdminEditorCSS user}}}
 	</head>
 	<body>
 		<main>
 			<article class="module intro">
 				<section class="content">
 					<figure>
-						<img src="assets/img/intro/vh.png" alt="VH" />
+						<img src="/img/intro/vh.png" alt="VH" />
 					</figure>
 					<section class="title">
 						<h1>Victor Herrera</h1>
@@ -265,7 +269,7 @@
 								<li>
 									<figure>
 										<a href="javascript:void(0)">
-											<img src="assets/img/work/samples/github.png" alt="GitHub Profile" />
+											<img src="/img/work/samples/github.png" alt="GitHub Profile" />
 										</a>
 									</figure>
 									
@@ -273,7 +277,7 @@
 								<li>
 									<figure>
 										<a href="javascript:void(0)">
-											<img src="assets/img/work/samples/github.png" alt="GitHub Profile" />
+											<img src="/img/work/samples/github.png" alt="GitHub Profile" />
 										</a>
 									</figure>
 									
@@ -281,7 +285,7 @@
 								<li>
 									<figure>
 										<a href="javascript:void(0)">
-											<img src="assets/img/work/samples/github.png" alt="GitHub Profile" />
+											<img src="/img/work/samples/github.png" alt="GitHub Profile" />
 										</a>
 									</figure>
 									
@@ -289,7 +293,7 @@
 								<li>
 									<figure>
 										<a href="javascript:void(0)">
-											<img src="assets/img/work/samples/github.png" alt="GitHub Profile" />
+											<img src="/img/work/samples/github.png" alt="GitHub Profile" />
 										</a>
 									</figure>
 									
@@ -297,7 +301,7 @@
 								<li>
 									<figure>
 										<a href="javascript:void(0)">
-											<img src="assets/img/work/samples/github.png" alt="GitHub Profile" />
+											<img src="/img/work/samples/github.png" alt="GitHub Profile" />
 										</a>
 									</figure>
 									
@@ -305,7 +309,7 @@
 								<li>
 									<figure>
 										<a href="javascript:void(0)">
-											<img src="assets/img/work/samples/github.png" alt="GitHub Profile" />
+											<img src="/img/work/samples/github.png" alt="GitHub Profile" />
 										</a>
 									</figure>
 									
@@ -345,7 +349,7 @@
 							</section>
 						</fieldset>
 						<figure>
-							<img src="assets/img/contact/mail.png" alt="Mail" />
+							<img src="/img/contact/mail.png" alt="Mail" />
 						</figure>
 					</form>
 				</section>
@@ -357,5 +361,7 @@
 				<a href="http://cr.linkedin.com/in/dsvictorh"></a>
 			</i>
 		</footer>
+
+		{{{isAdminEditorJS user}}}
 	</body>
 </html>
