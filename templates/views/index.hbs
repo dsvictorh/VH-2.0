@@ -1,21 +1,154 @@
-{{!< default}}
-<div class="container">
-	<div class="jumbotron"><img src="/images/logo.svg" width="160">
-		<h1>Welcome</h1>
-		<p>This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.</p>
-		<p>
-			It includes the latest versions of
-			<a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		</p>
-		<p>Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.</p>
-		<hr>
-		<p>We have created a default Admin user for you with the email <strong>dsvictorh@gmail.com</strong> and the password <strong>alienmac6strings</strong>.</p>
-		<p><a href="/keystone/signin" style="margin-right: 10px" class="btn btn-lg btn-primary">Sign in</a> to use the Admin UI.</p>
-		<hr>
-		<p>
-			Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			<a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
-		</p>
-	</div>
-</div>
+<article class="module intro">
+	<section class="content">
+		<figure>
+			<img src="/img/intro/vh.png" alt="VH" />
+		</figure>
+		<section class="title">
+			<h1>Victor Herrera</h1>
+			<ul>
+				<li>Software Engineer Lead</li>
+				<li>Senior Web Developer</li>
+				<li>Die-hard Gamer</li>
+			</ul>
+			<nav>
+				<ul>
+					<li>
+						<a href="#about" class="about"></a>
+					</li>
+					<li>
+						<a href="#work" class="work"></a>
+					</li>
+					<li>
+						<a href="#contact" class="contact"></a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+	</section>
+</article>
+<article class="module about reduced">
+	<section class="content">
+		<h2>About Me</h2>
+		<article>
+			<header class="code">
+				<h3>Dem Skillz</h3>
+			</header>
+			{{> stats meters=data.skills}}
+		</article>
+		<article>
+			<header class="game">
+				<h3>Personal Interests</h3>
+			</header>
+			{{> stats meters=data.likes}}
+		</article>
+	</section>
+</article>
+<article class="module work reduced">
+	<section class="content">
+		<h2>My Work</h2>
+		<article>
+			<section class="companies">
+				<p>I&rsquo;ve worked mostly on private companies and under strict NDAs, therefore I am not under the liberty to divulge my participation on a public/personal site. However here&rsquo;s a list of the places I&rsquo;ve work on as well as some simple code samples from my github profile. Still, I believe this site to be perfectly capable of showing my mad skillz on ze coding.</p>
+				{{#each data.works}}
+					<div>
+						<h3>{{name}}</h3>
+						<h4>{{position}}</h4>
+						<ul>
+							{{#each responsibilities}}
+								<li>{{this}}</li>
+							{{/each}}
+						</ul>
+					</div>
+				{{/each}}
+			</section>
+			<aside>
+				<h5>Samples</h5>
+				<ul>
+					<li>
+						<figure>
+							<a href="javascript:void(0)">
+								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
+							</a>
+						</figure>
+						
+					</li>
+					<li>
+						<figure>
+							<a href="javascript:void(0)">
+								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
+							</a>
+						</figure>
+						
+					</li>
+					<li>
+						<figure>
+							<a href="javascript:void(0)">
+								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
+							</a>
+						</figure>
+						
+					</li>
+					<li>
+						<figure>
+							<a href="javascript:void(0)">
+								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
+							</a>
+						</figure>
+						
+					</li>
+					<li>
+						<figure>
+							<a href="javascript:void(0)">
+								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
+							</a>
+						</figure>
+						
+					</li>
+					<li>
+						<figure>
+							<a href="javascript:void(0)">
+								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
+							</a>
+						</figure>
+						
+					</li>
+				</ul>
+			</aside>
+		</article>
+	</section>
+</article>
+<article class="module contact reduced">
+	<section class="content">
+		<h2>Contact Me</h2>
+
+		<form>
+			<fieldset>
+				<legend>Don&rsquo;t be shy to reach out. What can I do for you?</legend>
+				<div>
+					<section class="info">
+						<div class="field">
+							<label for="">Name</label>
+							<input type="text" />
+						</div>
+						<div class="field">
+							<label for="">Email</label>
+							<input type="text" />
+						</div>
+					</section>
+					<section class="message">
+						<div class="field">
+							<label for="">Message</label>
+							<textarea></textarea>
+						</div>
+					</section>
+				</div>
+				<section class="send">
+					<button>Send</button>
+				</section>
+			</fieldset>
+			<figure>
+				<img src="/img/contact/mail.png" alt="Mail" />
+			</figure>
+		</form>
+	</section>
+</article>

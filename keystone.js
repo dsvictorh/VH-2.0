@@ -97,7 +97,8 @@ keystone.set('email rules', [{
 keystone.set('nav', {
 	'enquiries': 'enquiries',
 	'users': 'users',
-	'meters': 'meters'
+	'meters': 'meters',
+	'works': 'works'
 });
 
 // Start Keystone to connect to your database and initialise the web server

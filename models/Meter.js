@@ -7,7 +7,8 @@ var Types = keystone.Field.Types;
  */
 
 var Meter = new keystone.List('Meter', {
-	 map: { name: 'title' }
+	 map: { name: 'title' },
+	 sortable: true
 });
 
 Meter.add({
@@ -22,6 +23,5 @@ Meter.add({
  * Registration
  */
 
-Meter.defaultSort = '-title';
 Meter.defaultColumns = 'title, percentage, type';
 Meter.register();

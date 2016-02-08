@@ -4,6 +4,7 @@
 //Structure
 html {
 	min-height: 600px;
+	font-size: 10px;
 }
 
 footer{
@@ -19,8 +20,8 @@ footer{
 	i{
 		float: right;
 		color: @color-linked-in;
-		font-size: 2vw;
-		line-height: 2vw;
+		font-size: 2rem;
+		line-height: 2;
 		cursor: pointer;
 		.transition(opacity 0.2s linear);
 
@@ -39,7 +40,7 @@ footer{
 body{
 	font-family: @font-site;
 	color: @color-white;
-	font-size: 1.1vw;
+	font-size: 1.5rem;
 }
 
 h1{
@@ -49,26 +50,30 @@ h1{
 }
 
 h2{
-    font-size: 3vw;
+    font-size: 3.5rem;
     margin-bottom: 2vw
 }
 
 h3{
-	font-size: 1.5vw;
+	font-size: 2rem;
 	font-weight: bold;
 }
 
 h4{
-	font-size: 1.2vw;
+	font-size: 2.3rem;
     margin-bottom: 1vw;
 }
 
 h5{
-	font-size: 1.1vw;
+	font-size: 2rem;
 }
 
 p{
 	margin-bottom: 1vw;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
 }
 
 .module{

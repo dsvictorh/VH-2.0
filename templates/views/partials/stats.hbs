@@ -1,0 +1,18 @@
+<ul class="stats">
+	{{#each meters}}
+		<li>
+			<div class="meter" data-percentage="{{percentage}}">
+				<div>
+					<span class="description">{{title}}</span>
+					<span class="percentage">0%</span>
+				</div>
+				<span class="result"></span>
+			</div>
+			{{#if description}}
+			<section class="details">
+				<p>{{{description}}}</p>
+			</section>
+			{{/if}}
+		</li>
+	{{/each}}
+</ul>
