@@ -64,54 +64,16 @@
 			<aside>
 				<h5>Samples</h5>
 				<ul>
+					{{#each data.samples}}
 					<li>
-						<figure>
-							<a href="javascript:void(0)">
-								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
-							</a>
-						</figure>
-						
+						<a href="{{url}}">
+							<figure>
+								<img src="{{image.filename}}" alt="GitHub Profile" />
+								<figcaption>{{project}}</figcaption>
+							</figure>
+						</a>
 					</li>
-					<li>
-						<figure>
-							<a href="javascript:void(0)">
-								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
-							</a>
-						</figure>
-						
-					</li>
-					<li>
-						<figure>
-							<a href="javascript:void(0)">
-								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
-							</a>
-						</figure>
-						
-					</li>
-					<li>
-						<figure>
-							<a href="javascript:void(0)">
-								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
-							</a>
-						</figure>
-						
-					</li>
-					<li>
-						<figure>
-							<a href="javascript:void(0)">
-								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
-							</a>
-						</figure>
-						
-					</li>
-					<li>
-						<figure>
-							<a href="javascript:void(0)">
-								<img src="/img/work/samples/github.png" alt="GitHub Profile" />
-							</a>
-						</figure>
-						
-					</li>
+					{{/each}}
 				</ul>
 			</aside>
 		</article>

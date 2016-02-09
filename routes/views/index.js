@@ -1,6 +1,7 @@
 var keystone = require('keystone');
 var Meter = keystone.list('Meter');
 var Work = keystone.list('Work');
+var Sample = keystone.list('Sample');
 
 exports = module.exports = function(req, res) {
 	
@@ -14,6 +15,7 @@ exports = module.exports = function(req, res) {
 		skills: [],
 		likes: [],
 		works: [],
+		samples: []
 	}
 
 	view.on('init', function(next){
@@ -37,6 +39,15 @@ exports = module.exports = function(req, res) {
 			.sort('sortOrder')
 			.exec(function(err, result){
 				locals.data.works = result;
+				next(err);
+			});
+	});
+
+	view.on('init', function(next){
+		Sample.model.find()
+			.sort('sortOrder')
+			.exec(function(err, result){
+				locals.data.samples = result;
 				next(err);
 			});
 	});
