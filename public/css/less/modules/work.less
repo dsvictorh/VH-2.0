@@ -35,7 +35,6 @@
 
 			li{
 				margin: 1vw;
-			    background: #171717;
 			    border-radius: 10px;
 			    cursor: pointer;
 			    border: 2px solid @color-box-sample-border;
@@ -44,6 +43,30 @@
 
 			    &:hover{
 			    	opacity: 0.9;
+
+			    	figcaption{
+			    		opacity: 1;
+			    	}
+			    }
+
+			    figure{
+			    	position: relative;
+			    	overflow: hidden;
+    				border-radius: 10px;
+
+			    	figcaption{
+						position: absolute;
+					    top: 40%;
+					    width: 100%;
+					    text-align: center;
+					    background: rgba(0, 0, 0, 0.5);
+					    font-size: 1.5rem;
+					    text-transform: uppercase;
+					    padding: 3%;
+					    box-sizing: border-box;
+					    opacity: 0;
+					    .transition(opacity 0.5s linear);
+			    	}
 			    }
 			}
 		}
