@@ -14,6 +14,15 @@
 
     	img{
     		vertical-align: bottom;
+    		position: relative;
+    		opacity: 0;
+    		top: -25px;
+    		.transition(all 1s linear);
+
+    		&.fade-in{
+				opacity: 1;
+				top: 0;
+    		}
     	}
 	}
 
@@ -40,7 +49,13 @@
 				li{
 					float: left;
 					font-size: 2.6vw;
-					margin: 1vw 3vw;		
+					margin: 1vw 3vw;	
+					opacity: 0;
+					.transitionTimeline(opacity, 1s, 0.4s, ease-out, 3);	
+
+					&.fade-in{
+						opacity: 1;
+					}
 					
 					a{
 						display: block;

@@ -5,10 +5,10 @@ vh.directive('waypointsAnimate', function(){
 		link: function(scope, elem, attr){
 			elem.find('[data-animation]').each(function(){
 				var element = $(this);
-				
+
 				element.waypoint({
 					offset: function () {
-						return Waypoint.viewportHeight() / 1.8;
+						return Waypoint.viewportHeight() * 0.6;
 					},
 					handler: function(){
 						var waypointElement = $(this.element);
@@ -24,7 +24,6 @@ vh.directive('waypointsAnimate', function(){
 		}
 	}
 });
-
 
 vh.directive('fillMeters', function(){
 	return{
@@ -64,4 +63,25 @@ vh.directive('fillMeters', function(){
 			});
 		}
 	}
+});
+
+vh.directive('fadeIn', function(){
+	return{
+		link: function(scope, elem, attr){
+			setTimeout(function(){
+				if(elem.attr('fade-in') === 'self'){
+					elem.addClass('fade-in')
+				}else{
+					elem.children().addClass('fade-in');
+				}
+			}, 1200);
+		}
+	}
+});
+
+
+$(window).load(function(){
+	setTimeout(function () {
+	    window.scrollTo(0, 0);
+	}, 1);
 });
