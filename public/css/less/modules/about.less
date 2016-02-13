@@ -29,6 +29,12 @@
 
 		li{
 			margin-bottom: 1vw;
+
+			&.open{
+				.details{
+					max-height: 35rem;
+				}
+			}
 		}
 
 		.meter{
@@ -82,11 +88,15 @@
 		}
 
 		.details{
-		    //margin: 1vw;
 		    width: 75%;
 	        max-height: 0;
 		    overflow: hidden;
 		    box-sizing: border-box;
+		    .transition(max-height 1s linear);
+
+		    p{
+		    	margin: 1vw;
+		    }
 		}
 	}
 }
