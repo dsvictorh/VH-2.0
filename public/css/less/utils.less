@@ -152,6 +152,24 @@
 	transition: @value;
 }
 
+.transitionTimeline(@transitionProperty, @duration, @delay, @easing: linear, @amount: 1, @childSelector: null, @index: 1){
+	&when (@childSelector = null){
+		&:nth-child(@{index}){
+			.transition(@transitionProperty @duration (@delay * @index) @easing);
+		}
+	}
+	
+	&when not (@childSelector = null){
+		&:nth-child(@{index}) [@{childSelector}]{
+			.transition(@transitionProperty @duration (@delay * @index) @easing);
+		}
+	}
+
+	&when not (@index = @amount){
+		.transitionTimeline(@transitionProperty, @duration, @delay, @easing, @amount, @childSelector, @index + 1);
+	}
+}
+
 .transform(@value) {
 	-webkit-transform: @value;
 	-moz-transform: @value;
@@ -164,7 +182,7 @@
 	filter: @value;
 }
 
-.animation(@name, @duration: null, @delay: null, @direction: null, @iterationCount: null, @fillMode: null, @timingFunction: null) {
+.animation(@name, @duration: null, @delay: null, @direction: null, @iterationCount: null, @fillMode: null, @timingFunction: null){
 	-moz-animation-name: @name;
 	-webkit-animation-name: @name;
 	animation-name: @name;
@@ -219,3 +237,4 @@
 		@steps();
 	}
 }
+

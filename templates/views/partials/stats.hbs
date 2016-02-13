@@ -1,12 +1,13 @@
-<ul class="stats">
+<ul class="stats" data-animation="slide-down" data-trigger="fill" fill-meters>
 	{{#each meters}}
-		<li>
-			<div class="meter" data-percentage="{{percentage}}">
-				<div>
+		<li data-fade-in>
+			<div class="meter" data-slide-down data-percentage="{{percentage}}">
+				<div {{#ifeq @index 0}}data-click-me{{/ifeq}}>
+					<i data-fill></i>
 					<span class="description">{{title}}</span>
-					<span class="percentage">0%</span>
+					<span class="percentage" data-text></span>
 				</div>
-				<span class="result"></span>
+				<span class="result" data-result></span>
 			</div>
 			{{#if description}}
 			<section class="details">

@@ -43,11 +43,24 @@
 			    cursor: pointer;
 				.shadow-box;
 
-				&:before{
-					background: blue;
+				i{
 					float:left;
 					height: 100%;
 					content: '';
+					background: rgba(185, 14, 14, 0.5);
+					.transition(background 0.5s linear);
+
+					&.yellow{
+						background: rgba(173, 185, 14, 0.5);
+					}
+
+					&.green{
+						background: rgba(50, 165, 97, 0.5);
+					}
+
+					&.red{
+						background: rgba(255, 0, 0, 0.5);
+					}
 				}
 
 				span{
@@ -69,8 +82,11 @@
 		}
 
 		.details{
-		    padding: 1vw;
+		    //margin: 1vw;
 		    width: 75%;
+	        max-height: 0;
+		    overflow: hidden;
+		    box-sizing: border-box;
 		}
 	}
 }
