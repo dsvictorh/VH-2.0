@@ -2,7 +2,8 @@ vh.controller('about', function($scope){
 	var badSkills = ['Noob', 'Scrub', 'Bronze V', 'Newbie', ':(', 'Y u no better?'];
 	var middleSkills = ['Not Bad', 'Mid Level', 'Getting Better', 'It\'s Something', 'Still Learning', 'Silver V'];
 	var goodSkills = ['Awesomesauce', 'Ninja', 'Pro', '1v1 Me Bro', 'Awwww Yiss', 'Skilzzzzz'];
-	var oopsSkills = ['Uh-oh', 'Whoops', 'Oh dear...', 'Ummmmm....', 'Oooops', 'Woah there!'];
+	var oopsSkills = ['Uh-oh', 'Whoops', 'Oh Dear...', 'Ummmmm....', 'Oooops', 'Woah there!'];
+	var mostRecent;
 
 	$scope.open = function(e){
 		var element = $(e.currentTarget);
@@ -30,7 +31,7 @@ vh.controller('about', function($scope){
 		var time = 0;
 
 		for(var i = 0; i < text.length; i++){
-			time += 150;
+			time += 100;
 			(function(number){
 				setTimeout(function(){
 					textContainer.text(textContainer.text() + text.charAt(number));
@@ -46,8 +47,13 @@ vh.controller('about', function($scope){
 	}
 
 	function getSkill(percentage){
-		var random =  Math.floor(Math.random() * 3);
+		var random =  Math.floor(Math.random() * 6);
 
+		if(mostRecent == random && random != 5){
+			random += 1;
+		}
+
+		mostRecent = random;
 		if(percentage < 50){
 			return badSkills[random];
 		}
