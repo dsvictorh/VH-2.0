@@ -26,7 +26,7 @@
 		</section>
 	</section>
 </article>
-<article id="about" class="module about reduced">
+<article id="about" class="module about reduced" ng-controller="about">
 	<section class="content" fade-in="self">
 		<h2>About Me</h2>
 		<article>
@@ -43,16 +43,16 @@
 		</article>
 	</section>
 </article>
-<article id="work" class="module work reduced">
+<article id="work" class="module work reduced" ng-controller="work">
 	<section class="content" fade-in="self">
 		<h2>My Work</h2>
+		<p>I&rsquo;ve worked mostly on private companies and under strict NDAs, therefore I am not under the liberty to divulge my participation on a public/personal site. However I can say that it has been often for highly scalable applications which demand the best standards and practices. Also here&rsquo;s a list of the places I&rsquo;ve work on as well as some simple code samples from my github profile. Still, I believe this site to be perfectly capable of showing my mad skillz on ze coding.</p>
 		<article>
 			<section class="companies">
-				<p>I&rsquo;ve worked mostly on private companies and under strict NDAs, therefore I am not under the liberty to divulge my participation on a public/personal site. However I can say that it has been often for highly scalable applications which demand the best standards and practices. Also here&rsquo;s a list of the places I&rsquo;ve work on as well as some simple code samples from my github profile. Still, I believe this site to be perfectly capable of showing my mad skillz on ze coding.</p>
 				{{#each data.works}}
-					<div>
+					<div data-animation="scale-fade">
 						<h3>{{name}}</h3>
-						<h4>{{position}}</h4>
+						<h4 ng-click="toggle($event)">{{position}}</h4>
 						<ul>
 							{{#each responsibilities}}
 								<li>{{this}}</li>
@@ -61,13 +61,12 @@
 					</div>
 				{{/each}}
 			</section>
-			<aside>
-				<h5>Samples</h5>
+			<section class="samples" data-animation="slide-down">
 				<ul>
 					{{#each data.samples}}
-					<li>
+					<li data-fade-in>
 						<a href="{{url}}">
-							<figure>
+							<figure data-slide-down>
 								<img src="{{image.filename}}" alt="GitHub Profile" />
 								<figcaption>{{project}}</figcaption>
 							</figure>
@@ -75,7 +74,7 @@
 					</li>
 					{{/each}}
 				</ul>
-			</aside>
+			</section>
 		</article>
 	</section>
 </article>

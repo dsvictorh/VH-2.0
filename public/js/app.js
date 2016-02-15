@@ -8,7 +8,7 @@ vh.directive('waypointsAnimate', function(){
 
 				element.waypoint({
 					offset: function () {
-						return Waypoint.viewportHeight() * 0.6;
+						return Waypoint.viewportHeight() * 0.9;
 					},
 					handler: function(){
 						var waypointElement = $(this.element);
@@ -77,11 +77,4 @@ vh.directive('fadeIn', function(){
 			}, 1200);
 		}
 	}
-});
-
-
-$(window).load(function(){
-	setTimeout(function () {
-	    window.scrollTo(0, 0);
-	}, 1);
 });

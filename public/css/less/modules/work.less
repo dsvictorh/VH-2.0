@@ -5,45 +5,67 @@
 		.clear; 
 		
 		.companies{
-			width: 70%;
-	    	float: left;
-	    	box-sizing: border-box;
-	    	padding-right: 5%;
+			margin-bottom: 5vw;
 
 	    	div{
     		    margin: 5vh 0;
-	    	}
+    		    overflow: hidden;
+
+    		    &.open{
+			    	ul{
+			    		max-height: 30rem;
+			    		.transition(max-height 1.5s linear);
+			    	}
+
+			    	h4{
+			    		.awesome-icon('\f106');
+			    	}
+			    }
+		    	}
+
+	    	
 
 	    	ul{
 	    	    padding-left: 1vw;
 			    list-style-type: disc;
 			    font-style: italic;
+			    max-height: 0;
+			    .transition(max-height 1s ease-out);
 		    }
 
 		    h4{
     	    	border-bottom: 1px solid @color-white;
+    	    	position: relative;
+    	    	cursor: pointer;
+    	    	.user-select(none);
+    	    	.awesome-icon('\f107');
+	
+
+    	    	&:after{
+    	    		position: absolute;
+    	    		top: 0;
+    	    		right: 0;
+    	    	}
 		    }
 		}
 	    
-	    aside{
-			width: 30%;
-			float: left;
-
-			h5{
-				text-align: center;
-			}
+	    .samples{
+	    	ul{
+				.clear;
+	    	}
 
 			li{
-				margin: 1vw;
+				float: left;
+			    width: 30%;
+			    height: 20rem;
+			    margin: 1%;
+			    overflow: hidden;
 			    border-radius: 10px;
 			    cursor: pointer;
 			    border: 2px solid @color-box-sample-border;
 			    .gradient(@color-box-sample-from, @color-box-sample-to);
-			    .transition(opacity 0.2s linear);
 
 			    &:hover{
-			    	opacity: 0.9;
-
 			    	figcaption{
 			    		opacity: 1;
 			    	}
@@ -53,6 +75,7 @@
 			    	position: relative;
 			    	overflow: hidden;
     				border-radius: 10px;
+    				height: 100%;
 
 			    	figcaption{
 						position: absolute;
