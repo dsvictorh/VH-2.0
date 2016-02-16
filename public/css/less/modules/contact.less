@@ -6,10 +6,19 @@
 	form{
 		.clear;
 
+		.media-mobile({
+			position: relative;
+		});
+
 		fieldset{
 			float: left;
 			width: 70%;
 			.clear;
+
+			.media-mobile({
+				float: none;
+    			width: 80%;
+			});
 
 			legend{
 				margin: 1vw 0;
@@ -21,11 +30,20 @@
 				.info, .message{
 					float: left;
 					width: 50%;
+
+					.media-mobile({
+					    float: none;
+					    width: auto;
+					});
 				}
 
 				.info{
 					box-sizing: border-box;
     				padding-right: 10%;
+
+    				.media-mobile({
+						padding-right: 0;
+    				});
 				}
 			}
 
@@ -34,6 +52,14 @@
 
 				button{
 					float:right;
+
+					.media-mobile({
+					    float: none;
+					    margin: 5% 0px;
+					    width: 100%;
+					    height: 50px;
+					    border-radius: 5px;
+					});
 				}
 			}
 		}
@@ -41,6 +67,12 @@
 		figure{
 		    float: right;
     		width: 25%;
+
+    		.media-mobile({
+			    position: absolute;
+			    bottom: 0;
+			    right: 0;
+    		});
 		}
 	}
 }

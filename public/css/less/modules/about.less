@@ -3,6 +3,10 @@
 	border-top: 1px solid @color-borders;
 	border-bottom: 1px solid @color-borders;
 
+	.media-mobile({
+		overflow: hidden;
+	});
+
 	article{
 		margin-bottom: 10vh;
 	}
@@ -12,10 +16,19 @@
 
 		&.code{
 			.awesome-icon('\f121', before, 1.3vw, @margin-right: 1vw);
+
+			&:after{
+				.media-mobile({
+					font-size: 4vw;
+				});
+			}
 		}
 
 		&.game{
 			.awesome-icon('\f11b', before, 1.3vw, @margin-right: 1vw);
+
+			
+			
 		}
 
 		h3{
@@ -29,6 +42,10 @@
 
 		li{
 			margin-bottom: 1vw;
+
+			.media-mobile({
+				margin-bottom: 3vw;
+			});
 
 			&.open{
 				.details{
@@ -49,6 +66,10 @@
 			    position: relative;
 			    cursor: pointer;
 				.shadow-box;
+
+				.media-mobile({
+					width: 95%;
+				});
 
 				i{
 					float:left;
@@ -86,6 +107,10 @@
 
 		.result{
 			float: right;
+
+			.media-mobile({
+				display: none;
+			});
 		}
 
 		.details{

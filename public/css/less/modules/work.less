@@ -1,6 +1,10 @@
 &.work{
 	background: url(/img/work/background.jpg) right bottom fixed;
 
+	.media-mobile({
+		background-position: left bottom;
+	});
+
 	article{
 		.clear; 
 		
@@ -15,6 +19,10 @@
 			    	ul{
 			    		max-height: 30rem;
 			    		.transition(max-height 1.5s linear);
+
+			    		.media-mobile({
+							max-height: 40rem;
+			    		});
 			    	}
 
 			    	h4{
@@ -31,6 +39,16 @@
 			    font-style: italic;
 			    max-height: 0;
 			    .transition(max-height 1s ease-out);
+
+			    .media-mobile({
+					padding-left: 2.5rem;
+			    });
+
+			    li{
+			    	.media-mobile({
+						padding-bottom: 2vw;
+				    });
+			    }
 		    }
 
 		    h4{
@@ -64,6 +82,19 @@
 			    cursor: pointer;
 			    border: 2px solid @color-box-sample-border;
 			    .gradient(@color-box-sample-from, @color-box-sample-to);
+
+			    .media-mobile({
+					width: 44%;
+					margin: 2%;
+					height: 25vw;
+			    });
+
+			    .media-mobile-small({
+					width: 95%;
+				    margin: 5% auto;
+				    height: 50vw;
+				    float: none;
+			    });
 
 			    &:hover{
 			    	figcaption{

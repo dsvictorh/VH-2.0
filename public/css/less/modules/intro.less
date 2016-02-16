@@ -5,12 +5,22 @@
 		position: relative;
 		padding: 15vh 0 0;
 		.clear;
+
+		.media-mobile({
+			padding-top: 10vh;
+		});
 	}
 
 	figure{
 	    width: 55%;
     	position: absolute;
     	bottom: 0;
+
+		.media-mobile({
+		    position: static;
+		    width: 65%;
+		    margin: 0 auto;
+		});
 
     	img{
     		vertical-align: bottom;
@@ -31,6 +41,12 @@
 		float: right;
 		.shadow-text;
 
+		.media-mobile({
+		    width: auto;
+		    float: none;
+		    text-align: center;
+		});
+
 		ul{
     	    font-size: 2.5rem;
 		    margin-left: 2%;
@@ -45,6 +61,10 @@
 			ul{
 				.clear;
 				margin-left: 0;
+
+				.media-mobile({
+					display: none;
+				});
 
 				li{
 					float: left;
