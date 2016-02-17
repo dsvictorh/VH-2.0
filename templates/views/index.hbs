@@ -89,21 +89,22 @@
 					<section class="info">
 						<div class="field">
 							<label for="name">Name</label>
-							<input type="text" name="name" />
+							<input type="text" name="name" required />
 						</div>
 						<div class="field">
 							<label for="email">Email</label>
-							<input type="email" name="email" />
+							<input type="email" name="email" required />
 						</div>
 					</section>
 					<section class="message">
 						<div class="field">
 							<label for="message">Message</label>
-							<textarea name="message"></textarea>
+							<textarea name="message" required></textarea>
 						</div>
 					</section>
 				</div>
 				<section class="send">
+					<div class="g-recaptcha" data-theme="dark" data-sitekey="6LfbjRgTAAAAAHXP29bnsw9I0DqVg7SlXUApPhlK"></div>
 					<button>Send</button>
 				</section>
 			</fieldset>

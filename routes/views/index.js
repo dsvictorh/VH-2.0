@@ -12,6 +12,7 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 	locals.scripts = [{url: '/js/controllers/about.js'}, {url: '/js/controllers/work.js'}, {url: '/js/controllers/contact.js'}];
+	locals.recaptcha = true;
 	locals.data = {
 		skills: [],
 		likes: [],

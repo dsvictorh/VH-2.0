@@ -5,14 +5,15 @@ vh.controller('contact', function($scope){
 		data.name = form.find('[name="name"]').val();
 		data.email = form.find('[name="email"]').val();
 		data.message = form.find('[name="message"]').val();
+		data.recaptcha = grecaptcha.getResponse();
 
 		$.ajax({
 			url: '/api/mail/send',
 			method: 'POST',
 			dataType: 'application/json',
 			data: data,
-			sucess: function(data){
-
+			success: function(data){
+				console.log(data);
 			}
 		});
 
