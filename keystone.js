@@ -16,7 +16,7 @@ keystone.init({
 	'brand': 'VH-2',
 
 	'less': 'public',
-	'static': ['public', process.env.CLOUD_DIR || 'upload'],
+	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'hbs',
@@ -32,7 +32,8 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User'
+	'user model': 'User',
+	'mongo': process.env.MONGO_URI || '',
 
 });
 

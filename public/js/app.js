@@ -74,7 +74,32 @@ vh.directive('fadeIn', function(){
 				}else{
 					elem.children().addClass('fade-in');
 				}
-			}, 1200);
+			}, 500);
 		}
 	}
 });
+
+vh.directive('unfocus', function(){
+	return{
+		link: function(scope, elem, attr){
+			$(elem).on('click', '[data-focus-container] *, [data-focus]', function (e) {
+				$(this).blur();
+			});
+		}
+	}
+});
+
+vh.directive('scrollTo', function(){
+	return{
+		link: function(scope, elem, attr){
+			$(elem).on('click', function(e){
+				var scrollTarget = $(elem.attr('href') || elem.attr('data-scroll'));
+				e.preventDefault();
+
+				if(scrollTarget){
+					$.scrollTo(scrollTarget, 1000);
+				}
+			});
+		}
+	}
+})

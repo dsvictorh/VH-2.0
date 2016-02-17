@@ -1,5 +1,5 @@
 [data-animation="slide-down"]{
-	[data-fade-in]{
+	[data-fade-in], &[data-fade-in]{
 		opacity: 0;
 		visibility: hidden;
 		.transitionTimeline(opacity, 0.5s, 0.5s, linear, 10);
@@ -31,7 +31,7 @@
 	}
 
 	&.animate{
-		[data-fade-in]{
+		[data-fade-in], &[data-fade-in]{
 			visibility: visible;
 			opacity: 1;
 

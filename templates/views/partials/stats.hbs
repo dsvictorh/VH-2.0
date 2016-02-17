@@ -1,6 +1,6 @@
-<ul class="stats" data-animation="slide-down" data-trigger="fill" fill-meters>
+<ul class="stats" data-animation="slide-down" data-trigger="fill" fill-meters data-focus-container>
 	{{#each meters}}
-		<li data-fade-in ng-click="open($event)">
+		<li data-fade-in ng-click="open($event)" tabindex="0">
 			<div class="meter" data-slide-down data-percentage="{{percentage}}">
 				<div {{#ifeq @index 0}}data-click-me{{/ifeq}}>
 					<i data-fill></i>

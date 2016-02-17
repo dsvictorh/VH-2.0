@@ -38,6 +38,7 @@
 			    list-style-type: disc;
 			    font-style: italic;
 			    max-height: 0;
+			    width: 85%;
 			    .transition(max-height 1s ease-out);
 
 			    .media-mobile({
@@ -80,8 +81,7 @@
 			    overflow: hidden;
 			    border-radius: 10px;
 			    cursor: pointer;
-			    border: 2px solid @color-box-sample-border;
-			    .gradient(@color-box-sample-from, @color-box-sample-to);
+			    border: 2px solid @color-box-sample-border; 
 
 			    .media-mobile({
 					width: 44%;
@@ -96,7 +96,7 @@
 				    float: none;
 			    });
 
-			    &:hover{
+			    &:hover, :focus{
 			    	figcaption{
 			    		opacity: 1;
 			    	}
@@ -107,6 +107,8 @@
 			    	overflow: hidden;
     				border-radius: 10px;
     				height: 100%;
+    				opacity: 0.9;
+    				.gradient(@color-box-sample-from, @color-box-sample-to);
 
 			    	figcaption{
 						position: absolute;

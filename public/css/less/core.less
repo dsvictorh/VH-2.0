@@ -82,7 +82,8 @@ table {
     }
 
     :focus{
-    	outline: 2px solid @color-blue;
+    	border: 2px solid @color-orange;
+    	outline: none;
     }
 }
 
@@ -112,8 +113,12 @@ a, a:hover{
 	color: inherit;
 }
 
-:not(input):not(textarea):not(button):focus{
+:not(input):not(textarea):not(button):not(:active):focus{
 	outline: solid 2px @color-black;
+}
+
+:hover{
+	outline: none;
 }
 
 :active{
