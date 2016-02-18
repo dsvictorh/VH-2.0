@@ -89,6 +89,31 @@
 	}
 }
 
+[data-animation="slide-down-single"]{
+	[data-fade-in], &[data-fade-in]{
+		opacity: 0;
+		visibility: hidden;
+		.transition(opacity 0.5s 0.5s linear);
+
+		[data-slide-down]{
+			position: relative;
+			top: -5vw;
+			.transition(top 1s 0.5s ease-out);
+		}
+	}
+
+	&.animate{
+		[data-fade-in], &[data-fade-in]{
+			visibility: visible;
+			opacity: 1;
+
+			[data-slide-down]{
+				top: 0;
+			}
+		}		
+	}
+}
+
 [data-animation="scale-fade"]{
 	opacity: 0;
 	visibility: hidden;
