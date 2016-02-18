@@ -34,6 +34,7 @@ keystone.init({
 	'auth': true,
 	'user model': 'User',
 	'mongo': process.env.MONGO_URI || '',
+	'session store': 'mongo',
 
 });
 
