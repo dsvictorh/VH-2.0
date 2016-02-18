@@ -7,7 +7,9 @@
 		<meta charset="utf-8" /> 
 		<link rel="icon" href="/img/favicon.ico" />
 		<link rel="stylesheet" href="/css/site.css" />
-		<script src='https://www.google.com/recaptcha/api.js'></script>
+		{{#if recaptcha}}
+			<script src='https://www.google.com/recaptcha/api.js'></script>
+		{{/if}}
 	</head>
 	<body ng-app="vh" unfocus>
 		<main waypoints-animate>
