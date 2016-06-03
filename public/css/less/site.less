@@ -54,6 +54,50 @@ body{
 	font-family: @font-site;
 	color: @color-white;
 	font-size: 1.5rem;
+	background: @color-gray;
+	.awesome-icon('\f013', @position: before, @size: 50px);
+
+	&:before{
+	    position: fixed;
+	    display: block;
+	    top: 50%;
+	    left: 0;
+	    margin: 0 49%;
+	    z-index: -1;
+
+	    .transition(all 0.3s linear);
+	    .animation(spin, @duration: 2s, @iterationCount: infinite, @timingFunction: linear);
+	    .keyframes(spin, {
+		  0% {
+		  	opacity: 1;
+		    -webkit-transform: rotate(0deg);
+		            transform: rotate(0deg);
+		  }
+
+		  50%{
+		  	opacity: 0;
+		  }
+
+		  100% {
+		  	opacity: 1;
+		    -webkit-transform: rotate(359deg);
+		            transform: rotate(359deg);
+		  }
+		});
+	}
+
+	&.ready:after{
+		opacity: 0;
+	}
+}
+
+main{
+	opacity: 0;
+	.transition(opacity 0.5s 0.5s ease-out);
+
+	.ready &{
+		opacity: 1;
+	}
 }
 
 h1{
@@ -107,17 +151,6 @@ p{
 		.media-mobile-small({
 			width: 95%;
 		});
-
-		&[fade-in]{
-			opacity: 0;
-			visibility: hidden;
-			.transition(opacity 1s 0.2s ease-out);
-
-			&.fade-in{
-				visibility: visible;
-				opacity: 1;
-			}
-		}
 
 		.reduced&{
 			max-width: 1000px;

@@ -3,23 +3,26 @@ var vh = angular.module('vh', []);
 vh.directive('waypointsAnimate', function(){
 	return{
 		link: function(scope, elem, attr){
-			elem.find('[data-animation]').each(function(){
-				var element = $(this);
+			$(window).load(function() {
+				$('body').addClass('ready');
+				elem.find('[data-animation]').each(function(){
+					var element = $(this);
 
-				element.waypoint({
-					offset: function () {
-						return Waypoint.viewportHeight() * 0.9;
-					},
-					handler: function(){
-						var waypointElement = $(this.element);
-						waypointElement.addClass('animate');
-						if(waypointElement.is('[data-trigger]')){
-							waypointElement.trigger(waypointElement.attr('data-trigger'));
+					element.waypoint({
+						offset: function () {
+							return Waypoint.viewportHeight() * 0.9;
+						},
+						handler: function(){
+							var waypointElement = $(this.element);
+							waypointElement.addClass('animate');
+							if(waypointElement.is('[data-trigger]')){
+								waypointElement.trigger(waypointElement.attr('data-trigger'));
+							}
+							
+							this.destroy();
 						}
-						
-						this.destroy();
-					}
-				});	
+					});	
+				});
 			});
 		}
 	}
@@ -68,13 +71,15 @@ vh.directive('fillMeters', function(){
 vh.directive('fadeIn', function(){
 	return{
 		link: function(scope, elem, attr){
-			setTimeout(function(){
-				if(elem.attr('fade-in') === 'self'){
-					elem.addClass('fade-in')
-				}else{
-					elem.children().addClass('fade-in');
-				}
-			}, 500);
+			$(window).load(function() {
+				setTimeout(function(){
+					if(elem.attr('fade-in') === 'self'){
+						elem.addClass('fade-in')
+					}else{
+						elem.children().addClass('fade-in');
+					}
+				}, 700);
+			});
 		}
 	}
 });

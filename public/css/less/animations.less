@@ -41,7 +41,19 @@
 
 			[data-click-me]:before{
 				
-				.animation(click-me, @duration: 1.5s, @delay: 2s, @fillMode: both, @direction: alternate, @iterationCount: 2, @timingFunction: linear);
+				@clickMeAnimationName: click-me, click-me;
+				@clickMeAnimationDuration: 1.5s, 1.5s;
+				@clickMeAnimationDelay: 1.5s, 5.5s;
+				@clickMeAnimationFillMode: forwards, forwards;
+				@clickMeAnimationDirection: normal, reverse;
+				@clickMeAnimationTimingFunction: linear, linear; 
+				.animation(
+					 @clickMeAnimationName,
+					 @duration: @clickMeAnimationDuration, 
+					 @delay: @clickMeAnimationDelay, 
+					 @fillMode: @clickMeAnimationFillMode, 
+					 @direction: @clickMeAnimationDirection, 
+					 @timingFunction: @clickMeAnimationTimingFunction);
 				.keyframes(click-me, {
 					0%{
 						top: -20px;
