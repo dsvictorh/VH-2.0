@@ -44,6 +44,12 @@
 }
 
 //Media Queries
+.media-desktop-small(@styles) {
+	@media screen and (max-width: 1024px) {
+		@styles();
+	}
+}
+
 .media-mobile(@styles) {
 	@media screen and (max-width: 768px) {
 		@styles();
