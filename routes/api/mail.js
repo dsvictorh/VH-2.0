@@ -8,7 +8,7 @@ exports.send = function(req, res){
 	};
 
 	var emailRegex = new RegExp(/^[a-z0-9]+((-|_|\.)[a-z0-9]+)*(-|_|\.)*@[a-z0-9]+((-|_|\.)[a-z0-9]+)*(\.[a-z]+)$/i);
-	var textRegex = new RegExp(/[\\\+\*\?\^\[\(\)\|\}\°\¬\!\"\#\/\=\'\¡\¨\´\;\:\~\&\>\<]/i);
+	var textRegex = new RegExp(/[\\\+\*\^\[\(\)\|\}\°\¬\!\"\#\/\=\'\¡\¨\´\;\:\~\&\>\<]/i);
 	var valid = true;
 
 	if(!req.body.name){
