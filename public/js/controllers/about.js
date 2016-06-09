@@ -19,7 +19,9 @@ vh.controller('about', function($scope){
 					element.removeClass('locked');
 				});
 			}else{
-				skillLevel.text('');
+				setTimeout(function(){
+					skillLevel.text('');
+				}, 1000);
 			}
 		}
 		

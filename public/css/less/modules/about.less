@@ -61,6 +61,8 @@
 
 		.meter{
 			line-height: 2.2;
+			color: @color-black;
+			font-weight: bold;
 			.clear;
 
 			div{
@@ -69,6 +71,7 @@
 			    float: left;
 			    position: relative;
 			    cursor: pointer;
+		        background: rgba(255,255,255,0.3);
 				.shadow-box;
 
 				.media-mobile({
@@ -79,19 +82,19 @@
 					float:left;
 					height: 100%;
 					content: '';
-					background: rgba(185, 14, 14, 0.5);
-					.transition(background 0.5s linear);
+					.transition(background 1s ease-out);
+					.gradient(@color-low,  @color-low);
 
-					&.yellow{
-						background: rgba(173, 185, 14, 0.5);
+					&.med{
+						.gradient(@color-low,  @color-med);
 					}
 
-					&.green{
-						background: rgba(50, 165, 97, 0.5);
+					&.good{
+						.gradient(@color-low,  @color-good);
 					}
 
-					&.red{
-						background: rgba(255, 0, 0, 0.5);
+					&.oops{
+						.gradient(@color-low,  @color-oops);
 					}
 				}
 
@@ -111,6 +114,11 @@
 
 		.result{
 			float: right;
+			color: @color-white;
+	        width: 14%;
+		    font-size: 1.4rem;
+		    line-height: 2.5;
+		    position: relative;
 
 			.media-mobile({
 				display: none;
@@ -122,7 +130,7 @@
 	        max-height: 0;
 		    overflow: hidden;
 		    box-sizing: border-box;
-		    .transition(all 1s ease-out);
+		    .transition(all 1.5s ease);
 
 		    p{
 		    	margin: 1vw;

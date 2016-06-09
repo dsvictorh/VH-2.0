@@ -48,15 +48,15 @@ vh.directive('fillMeters', function(){
 									element.find('[data-text]').text(number + '%');
 									
 									if(number == 50){
-										element.find('[data-fill]').addClass('yellow');
+										element.find('[data-fill]').addClass('med');
 									}
 
 									if(number == 80){
-										element.find('[data-fill]').addClass('green');
+										element.find('[data-fill]').addClass('good');
 									}
 
 									if(number == 101){
-										element.find('[data-fill]').addClass('red');
+										element.find('[data-fill]').addClass('oops');
 									}
 								}, time);
 							})(i);

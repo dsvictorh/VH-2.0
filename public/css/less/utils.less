@@ -15,14 +15,18 @@
 @color-white: #fff;
 @color-black: #000;
 @color-orange: #f15b40;
-@color-ocean: #02c1bb;
+@color-ocean: #00fff7;
 @color-purple: #8f75f1;
-@color-blue: #516274;
+@color-blue: #141d27;
 @color-gray: #464646;
 @color-borders: #292929;
 @color-footer-border: #e6e6e6;
 @color-linked-in: #1b86bc;
 @color-field-border: #808080;
+@color-low: #02c1bb;
+@color-med: #44ce6f;
+@color-good: #8adc1d;
+@color-oops: #d0dc1d;
 
 //Work
 @color-box-sample-from: #505050;
@@ -139,10 +143,10 @@
 
 .gradient(@colorFrom, @colorTo){
 	background: @colorFrom; 
-    background: -webkit-linear-gradient(@colorFrom, @colorTo); 
-    background: -o-linear-gradient(@colorFrom, @colorTo);
-    background: -moz-linear-gradient(@colorFrom, @colorTo);
-    background: linear-gradient(@colorFrom, @colorTo); 
+    background: -webkit-linear-gradient(left, @colorFrom, @colorTo); 
+    background: -o-linear-gradient(right, @colorFrom, @colorTo);
+    background: -moz-linear-gradient(right, @colorFrom, @colorTo);
+    background: linear-gradient(to-right, @colorFrom, @colorTo); 
 }
 
 .user-select(@value) {
