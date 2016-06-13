@@ -83,18 +83,22 @@
 					height: 100%;
 					content: '';
 					.transition(background 1s ease-out);
-					.gradient(@color-low,  @color-low);
+					.gradient(@color-base,  @color-low);
 
 					&.med{
-						.gradient(@color-low,  @color-med);
+						.gradient(@color-base,  @color-med);
+					}
+
+					&.med-good{
+						.gradient(@color-base,  @color-med-hight);
 					}
 
 					&.good{
-						.gradient(@color-low,  @color-good);
+						.gradient(@color-base,  @color-good);
 					}
 
 					&.oops{
-						.gradient(@color-low,  @color-oops);
+						.gradient(@color-base,  @color-oops);
 					}
 				}
 

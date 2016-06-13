@@ -47,8 +47,12 @@ vh.directive('fillMeters', function(){
 									element.find('[data-fill]').css('width', number + '%');
 									element.find('[data-text]').text(number + '%');
 									
-									if(number == 50){
+									if(number == 35){
 										element.find('[data-fill]').addClass('med');
+									}
+
+									if(number == 65){
+										element.find('[data-fill]').addClass('med-good');
 									}
 
 									if(number == 80){
