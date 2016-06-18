@@ -12,15 +12,17 @@ vh.controller('about', function($scope){
 			var skillLevel = element.find('[data-target="skill"]');
 			var percentage = parseInt(element.find('[data-percentage]').attr('data-percentage')) || 0;
 			element.toggleClass('open');	
+			element.addClass('locked');
 
 			if(skillLevel.length && element.is('.open')){
-				element.addClass('locked');
+				
 				renderSkill(skillLevel, percentage, function(){
 					element.removeClass('locked');
 				});
 			}else{
 				setTimeout(function(){
 					skillLevel.text('');
+					element.removeClass('locked');
 				}, 1000);
 			}
 		}
