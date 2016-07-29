@@ -46,20 +46,21 @@
 <article id="work" class="module work reduced" ng-controller="work">
 	<section class="content">
 		<h2>My Work</h2>
-		<p>I&rsquo;ve worked mostly on private companies and under strict NDAs, therefore I am not under the liberty to divulge my participation on a public/personal site. However I can say that it has been often for highly scalable applications which demand the best standards and practices. Also here&rsquo;s a list of the places I&rsquo;ve work on as well as some simple code samples from my github profile. Still, I believe this site to be perfectly capable of showing my mad skillz on ze coding.</p>
+		<p>I&rsquo;ve worked with several companies, each one with so many different points of view, culture and vision. I believe the experience and perspective from seeing and/or leading in so many different teams has been vital to my professional growth. Regardless of the client, project, approach or technology I am able to adapt to give the best results and to deal with each individual client accordingly.</p>
 		<article>
-			<section class="companies" data-focus-container>
-				{{#each data.works}}
-					<div data-animation="scale-fade">
-						<h3>{{name}}</h3>
-						<h4 ng-click="toggle($event)" tabindex="0">{{position}}</h4>
-						<ul>
-							{{#each responsibilities}}
-								<li>{{this}}</li>
-							{{/each}}
-						</ul>
-					</div>
-				{{/each}}
+			<section class="samples" data-focus-container>
+				<ul data-focus-container>
+					{{#each data.works}}
+						<li data-animation="scale-fade">
+							<a href="{{url}}">
+								<figure data-slide-down>
+									<img src="{{image}}" />
+									<figcaption>{{name}} <br /> {{position}}</figcaption>
+								</figure>
+							</a>
+						</li>
+					{{/each}}
+				</ul>
 			</section>
 			<h2>Code Samples</h2>
 			<section class="samples">

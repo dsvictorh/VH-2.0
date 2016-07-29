@@ -12,6 +12,8 @@ Work.add({
 	name: { type: Types.Text, initial: true, required: true },
 	position: { type: Types.Text, initial: true, required: true },
 	responsibilities: { type: Types.TextArray, default: []},
+	url: { type: Types.Url, initial: true, required: true},
+	image: { type: Types.Url, initial: true, required: true, default: '/img/work/samples/vh.png' },
 });
 
 
@@ -19,5 +21,5 @@ Work.add({
  * Registration
  */
 
-Work.defaultColumns = 'name, position';
+Work.defaultColumns = 'name, position, url';
 Work.register();
