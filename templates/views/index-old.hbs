@@ -1,0 +1,123 @@
+<article class="module intro">
+	<section class="content">
+		<section class="title">
+			<h1>Victor Herrera</h1>
+			<ul>
+				<li>Software Engineer Lead</li>
+				<li>Senior Web Developer</li>
+				<li>Die-hard Gamer</li>
+			</ul>
+			<nav>
+				<ul fade-in data-focus-container>
+					<li>
+						<a href="#about" class="about" scroll-to></a>
+					</li>
+					<li>
+						<a href="#work" class="work" scroll-to></a>
+					</li>
+					<li>
+						<a href="#contact" class="contact" scroll-to></a>
+					</li>
+				</ul>
+			</nav>
+		</section>
+		<figure>
+			<img src="/img/intro/vh.png" alt="VH" fade-in="self" />
+		</figure>
+	</section>
+</article>
+<article id="about" class="module about reduced" ng-controller="about">
+	<section class="content">
+		<h2>About Me</h2>
+		<article>
+			<header class="code">
+				<h3>Dem Skillz</h3>
+			</header>
+			{{> stats meters=data.skills}}
+		</article>
+		<article>
+			<header class="game">
+				<h3>Personal Interests</h3>
+			</header>
+			{{> stats meters=data.likes}}
+		</article>
+	</section>
+</article>
+<article id="work" class="module work reduced" ng-controller="work">
+	<section class="content">
+		<h2>My Work</h2>
+		<p>I&rsquo;ve worked with several companies, each one with so many different points of view, culture and vision. I believe the experience and perspective from seeing and/or leading in so many different teams has been vital to my professional growth. Regardless of the client, project, approach or technology I am able to adapt to give the best results and to deal with each individual client accordingly.</p>
+		<article>
+			<section class="samples" data-focus-container>
+				<ul data-focus-container>
+					{{#each data.works}}
+						<li data-animation="scale-fade">
+							<a href="{{url}}">
+								<figure data-slide-down>
+									<img src="{{image}}" />
+									<figcaption>{{name}} <br /> {{position}}</figcaption>
+								</figure>
+							</a>
+						</li>
+					{{/each}}
+				</ul>
+			</section>
+			<h2>Code Samples</h2>
+			<section class="samples">
+				<ul data-focus-container>
+					{{#each data.samples}}
+					<li data-animation="slide-down-single" data-fade-in>
+						<a href="{{url}}">
+							<figure data-slide-down>
+								<img src="{{image}}" alt="GitHub Profile" />
+								<figcaption>{{project}}</figcaption>
+							</figure>
+						</a>
+					</li>
+					{{/each}}
+				</ul>
+			</section>
+		</article>
+	</section>
+</article>
+<article id="contact" class="module contact reduced" ng-controller="contact">
+	<section class="content">
+		<h2>Contact Me</h2>
+
+		<form ng-submit="sendMail($event)">
+			<fieldset>
+				<legend>Don&rsquo;t be shy to reach out. What can I do for you?</legend>
+				<ul class="messages" ng-class="classes">
+					<li ng-repeat="item in messages">
+						<span ng-bind="item"></span>
+					</li>
+				</ul>
+				<div>
+					<section class="info">
+						<div class="field">
+							<label for="name">Name</label>
+							<input type="text" name="name" maxlength="100" />
+						</div>
+						<div class="field">
+							<label for="email">Email</label>
+							<input type="text" name="email" maxlength="100" />
+						</div>
+					</section>
+					<section class="message">
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" maxlength="500"></textarea>
+						</div>
+					</section>
+				</div>
+				<section class="send">
+					<div class="g-recaptcha" data-theme="dark" data-sitekey="6LfbjRgTAAAAAHXP29bnsw9I0DqVg7SlXUApPhlK"></div>
+					<button ng-click="lockSend($event)">Send</button>
+				</section>
+			</fieldset>
+			<figure>
+				<img src="/img/contact/mail.png" alt="Mail" />
+			</figure>
+		</form>
+	</section>
+</article>

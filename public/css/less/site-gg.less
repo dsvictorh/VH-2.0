@@ -1,0 +1,190 @@
+@import 'utils-gg.less';
+@import 'core-gg.less';
+
+//Structure
+html {
+	font-size: 10px;
+}
+
+main{
+	padding: 40px 0 0;
+}
+
+footer{
+    border-top: solid rgba(255,255,255,0.2) 1px;
+    padding: 20px;
+    background: @color-background;
+
+    ul{
+    	font-size: 2.5rem;
+
+    	li{
+    		margin: 0 20px;
+    		.transition(all 0.3s linear);
+
+    		&:hover{
+    			color: @color-danger;
+    		}
+
+    		.linked-in{
+	    		.awesome-icon('\f0e1');
+	    	}
+
+	    	.github{
+	    		.awesome-icon('\f113');
+	    	}
+
+	    	.facebook{
+	    		.awesome-icon('\f09a');
+	    	}
+
+	    	.twitter{
+	    		.awesome-icon('\f099');
+	    	}
+
+	    	.google{
+	    		.awesome-icon('\f0d5');
+	    	}
+
+	    	.email{
+	    		.awesome-icon('\f1fa');
+	    	}
+    	}
+	}
+
+	small{
+	    font-size: 1.2rem;
+	    color: @color-white;
+	    font-style: italic;
+	    font-weight: 300;
+	}
+}
+
+.nav-main{
+    border-bottom: solid rgba(255,255,255,0.2) 1px;
+    font-size: 1.8rem;
+
+    ul{
+    	li{
+    		padding: 0 35px;
+    		line-height: 4;
+		    padding: 0 25px;
+		    border-right: solid rgba(255,255,255,0.2) 1px;
+		    font-weight: 300;
+			letter-spacing: 0.2px;
+			cursor: pointer;
+			.transition(background 0.2s linear);
+
+			&:hover{
+				background: rgba(255, 255, 255, 0.05);
+			}
+    	}
+
+    	.logo{
+		    padding: 15px 60px;
+		    line-height: 1;
+    	}
+    }
+
+    button{
+    	background: @color-primary-button;
+    	color: @color-white;
+
+    	.transition(none);
+    	.awesome-icon('\f071', @position: before, @color: #fff500);
+
+    	&:hover{
+    		background: @color-danger;
+    		.transition(background 0.2s linear);
+
+    		&:before{
+    			color: @color-red;
+    		}
+    	}
+    }
+}
+
+.content-wrapper{
+	width: 960px;
+	margin: auto;
+}
+
+.flexbox{
+	display: flex;
+
+	&.align-items-center{
+		align-items: center;
+	}
+
+	&.justify-space-around{
+	    justify-content: space-around;
+	}
+
+	&.flex-wrap{
+		flex-wrap: wrap;
+	}
+
+	.fill-space{
+		flex-grow: 1;
+	}
+
+	.align-end{
+		align-self: flex-end;
+	}
+}
+
+
+//Layout
+body{
+	position: relative;
+	min-width: 960px;
+	font-family: @font-site;
+	font-size: 1.6rem;
+	background: @color-black;
+	color: @color-primary-text;
+    letter-spacing: 0.7px;
+    line-height: 1.3;
+}
+
+h1{
+    color: @color-white;
+    font-size: 5.2rem;
+    margin-bottom: 20px;
+}
+
+p{
+	margin-bottom: 15px;
+
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.hero-background{
+	position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+    overflow: hidden;
+    width: 100%;
+}
+
+.module{
+	display: flex;
+	padding: 60px 20px;
+	background: @color-background;
+
+	&.no-bottom-space{
+		padding-bottom: 0;
+	}
+
+	&.hero{
+		background: none;
+	}
+
+	@import 'modules-gg/text-image.less';
+	@import 'modules-gg/skills-viewer.less';
+}
+
+@import 'animations-gg.less';

@@ -39,6 +39,7 @@ exports = module.exports = function(app) {
 	
 	// Views
 	app.get('/', routes.views.index);
+	app.get('/legacy', routes.views.indexOld);
 	app.post('/api/mail/send', keystone.middleware.api, routes.api.mail.send);
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

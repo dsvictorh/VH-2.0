@@ -10,7 +10,6 @@ exports = module.exports = function(req, res) {
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.heroBackground = '/img/about-me/intro-hero.jpg';
 	locals.section = 'home';
 	locals.scripts = [{url: '/js/controllers/about.js'}, {url: '/js/controllers/work.js'}, {url: '/js/controllers/contact.js'}];
 	locals.recaptcha = true;
@@ -56,6 +55,6 @@ exports = module.exports = function(req, res) {
 	});
 
 	// Render the view
-	view.render('index');
+	view.render('index-old', { layout: 'legacy' });
 	
 };

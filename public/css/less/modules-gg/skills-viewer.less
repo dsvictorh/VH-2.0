@@ -1,0 +1,158 @@
+.skills-viewer{
+	> ul{
+		font-size: 3rem;
+	    text-transform: uppercase;
+	    letter-spacing: 5px;
+
+	    li{ 
+	    	margin-bottom: 25px;
+	    	cursor: pointer;
+	    	position: relative;
+	    	.transition(color 0.3s linear);
+
+	    	&:hover{
+	    		color: @color-hover;
+	    	}
+
+	    	&.active{
+	    		color: @color-hover;
+
+	    		&:after{
+		    		content: '';
+		    		position: absolute;
+		    		height: 25px;
+		    		width: 25px;
+		    		background: @color-black;
+		    		.transform(rotate(45deg));
+		    		top: 6px;
+		    		right: -15px;
+		    	}
+
+
+		    	i{
+	    		    position: absolute;
+				    right: 23px;
+				    top: 18px;
+				    width: 35%;
+				    border-top: 1px solid @color-hover;
+
+		    		&:before{
+			    		content: '';
+			    		position: absolute;
+			    		height: 10px;
+			    		width: 10px;
+			    		border-radius: 50%;
+			    		top: -5px;
+			    		left: -10px;
+			    		background: @color-hover;
+			    	}
+		    	}
+    		}		
+	    }
+	}
+
+	.viewer{
+	    width: 55%;
+	    padding: 20px;
+	    background: @color-black;
+	    box-shadow: 15px 15px 60px 0px @color-black;
+	    border-radius: 5px;
+
+	    figure{
+	    	width: 120px;
+		    text-align: center;
+		    font-weight: 700;
+
+		    &:nth-child(3n + 1){
+		    	color: @color-yellow;
+
+		    	.quarter{
+		    		border-top-color: @color-yellow;
+		    	}
+		    }
+
+		    &:nth-child(3n + 2){
+		    	color: @color-green;
+
+		    	.quarter{
+		    		border-top-color: @color-green;
+		    	}
+		    }
+
+		    &:nth-child(3n + 3){
+		    	color: @color-purple;
+
+		    	.quarter{
+		    		border-top-color: @color-purple;
+		    	}
+		    }
+	    }
+
+	    .details{
+	    	margin: 30px 30px 15px;
+
+	    	h4{
+		        margin-bottom: 10px;
+	    		font-size: 2.5rem;
+		    }
+
+		    ul{
+		        margin-bottom: 20px;
+			    display: flex;
+			    flex-wrap: wrap;
+
+			    li{
+		    	    width: 25%;
+				    padding: 5px;
+				    box-sizing: border-box;
+				    font-weight: 300;
+			    }
+		    }
+
+		    p{
+	    	    font-style: italic;
+	    		font-size: 1.4rem;
+		    }
+	    }
+
+	    .percentage-circle{
+    	    width: 110px;
+		    position: relative;
+		    height: 110px;
+		    margin: 0 auto;
+		    background: rgba(255, 255, 255, 0.1);
+		    border-radius: 50%;
+		    border: 2px solid rgba(255, 255, 255, 0.1);
+
+		    .quarter{
+	    	    position: absolute;
+			    top: 0;
+			    left: 0;
+			    width: 96px;
+			    height: 95px;
+			    border-radius: 50%;
+			    border: 7px solid;
+			    border-color: transparent transparent transparent transparent;
+		    }
+
+		    .text{
+	    	    position: absolute;
+			    font-size: 3rem;
+			    width: 100%;
+			    left: 0;
+			    top: 32%;
+			    text-align: center;
+		    }
+
+		    .cover{
+		    	position: absolute;
+			    top: 0px;
+			    left: 0px;
+			    width: 50px;
+			    height: 50px;
+			    background: @color-black;
+			    border-top-left-radius: 50px;
+		    }
+	    }
+	}
+}

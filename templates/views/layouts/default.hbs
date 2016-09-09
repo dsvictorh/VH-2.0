@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head prefix="og: http://ogp.me/ns#">
-		<title>Victor Herrera - Senior Web Developer</title>
-		<meta name="description" content="Senior Web Developer and Software Engineer Lead. Fan of simplistic yet astonishing digital solutions"/>
+		<title>Victor Herrera - Web Developer</title>
+		<meta name="description" content="Senior Web Developer - Fan of simplistic yet astonishing digital solutions"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta charset="utf-8" /> 
 		<meta property="og:locale" content="en_US">
-		<meta property="og:title" content="Victor Herrera R. | Software Engineer Lead - Senior Web Developer"/>
+		<meta property="og:title" content="Victor Herrera R. | Senior Web Developer"/>
 		<meta property="og:image" content="http://www.victorh.me/img/fb-share.jpg"/>
 		<meta property="og:image:type" content="image/jpg"/>
 		<meta property="og:image:width" content="600"/>
@@ -17,34 +17,73 @@
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:site" content="@dsvictorh" />
 		<meta name="twitter:title" content="Victor Herrera" />
-		<meta name="twitter:description" content="Senior Web Developer and Software Engineer Lead. Fan of simplistic yet astonishing digital solutions" />
+		<meta name="twitter:description" content="Senior Web Developer - Fan of simplistic yet astonishing digital solutions" />
 		<meta name="twitter:image" content="http://www.victorh.me/img/fb-share.jpg" />
-		<meta property="og:description" content="Senior Web Developer and Software Engineer Lead. Fan of simplistic yet astonishing digital solutions"/>
+		<meta property="og:description" content="Senior Web Developer - Fan of simplistic yet astonishing digital solutions"/>
 		<link rel="author" href="https://plus.google.com/+VictorHerreraR"/>
 		<link rel="icon" href="/img/favicon.ico" />
-		<link rel="stylesheet" href="/css/site.css" />
+		<link rel="stylesheet" href="/css/site-gg.css" />
 		{{#if recaptcha}}
 			<script src='https://www.google.com/recaptcha/api.js'></script>
 		{{/if}}
 	</head>
-	<body ng-app="vh" unfocus>
-		<main waypoints-animate>
+	<body ng-app="vh-gg">
+		{{#if heroBackground}}
+		<div class="hero-background">
+			<img src="{{heroBackground}}" />
+		</div>
+		{{/if}}
+		<header>
+			<nav class="nav-main flexbox">
+				<ul class="flexbox fill-space">
+					<li class="logo">
+						<a href="/">
+							<img src="/img/logo/logo-color.png" alt="About me" />
+						</a>		
+					</li>
+					<li>
+						<a href="/">Samples</a>
+					</li>
+					<li>
+						<a href="/">Contact</a>
+					</li>
+				</ul>
+				<button>
+					<a href="/">Gamers Only</a>
+				</button>	
+			</nav>
+		</header>
+		<main>
 			{{{body}}}
 		</main>
 		<footer>
-			<small>&copy;Victor Herrera 2016</small>
-			<i>
-				<a href="http://cr.linkedin.com/in/dsvictorh" class="linked-in" data-focus></a>
-			</i>
-			<i>
-				<a href="http://github.com/dsvictorh" class="github" data-focus></a>
-			</i>
+			<nav class="flexbox align-items-center">
+				<ul class="flexbox fill-space">
+					<li>
+						<a href="https://www.linkedin.com/in/dsvictorh" target="_blank" class="linked-in"></a>
+					</li>
+					<li>
+						<a href="https://github.com/dsvictorh/" class="github"></a>
+					</li>
+					<li>
+						<a href="https://www.facebook.com/dsvictorh" class="facebook"></a>
+					</li>
+					<li>
+						<a href="https://twitter.com/dsvictorh" class="twitter"></a>
+					</li>
+					<li>
+						<a href="https://plus.google.com/u/0/+VictorHerreraR" class="google"></a>
+					</li>
+					<li>
+						<a href="mailto:dsvictorh@gmail.com" class="email"></a>
+					</li>
+				</ul>
+				<small>&copy;Victor Herrera {[{currentYear}]}</small>
+			</nav>
 		</footer>
 		<script src="/lib/jquery.js"></script>
-		<script src="/lib/scroll-to.js"></script>
-		<script src="/lib/waypoints.js"></script>
 		<script src="/lib/angular.js"></script>
-		<script src="/js/app.js"></script>
+		<script src="/js/app-gg.js"></script>
 		{{> scripts scripts=scripts}}
 	</body>
 </html>
