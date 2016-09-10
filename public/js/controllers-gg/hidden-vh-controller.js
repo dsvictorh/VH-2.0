@@ -30,6 +30,5 @@ vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', function($sc
 				$scope.messages = ['An error has occured. Please contact the admin and try again later'];
 			});
 		}
-		
 	}
 }]);

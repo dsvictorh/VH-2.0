@@ -22,13 +22,13 @@
 </article>
 <article class="module hide-vh">
 	<div class="content-wrapper">
-		<section class="skills-viewer flexbox">
+		<section class="skills-viewer flexbox" ng-controller="SkillController">
 			<ul class="fill-space" focusable-objects>
 				{{#each data.skills}}
-					<li ng-click="loadSkills('{{name}}')" focus-object>{{name}} <i></i></li>
+					<li ng-click="loadSkill('{{name}}')" ng-class="{ active: activeSkill == '{{name}}' }" focus-object>{{name}} <i></i></li>
 				{{/each}}
 			</ul>
-			<div class="viewer">
+			<div class="viewer" ng-class="{ active: viewerActive }">
 				<div class="flexbox justify-space-around flex-wrap">
 					<figure>
 						<figcaption>HTML5</figcaption>
