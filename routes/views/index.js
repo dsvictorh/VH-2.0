@@ -2,6 +2,8 @@ var keystone = require('keystone');
 var Meter = keystone.list('Meter');
 var Work = keystone.list('Work');
 var Sample = keystone.list('Sample');
+var HomePage = keystone.list('HomePage');
+var Skill = keystone.list('Skill');
 
 exports = module.exports = function(req, res) {
 	
@@ -10,47 +12,29 @@ exports = module.exports = function(req, res) {
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.heroBackground = '/img/about-me/intro-hero.jpg';
-	locals.section = 'home';
-	locals.scripts = [{url: '/js/controllers/about.js'}, {url: '/js/controllers/work.js'}, {url: '/js/controllers/contact.js'}];
-	locals.recaptcha = true;
+	locals.scripts = [{url: '/js/controllers-gg/hidden-vh-controller.js'}];
 	locals.data = {
-		skills: [],
-		likes: [],
-		works: [],
-		samples: []
+		content: null,
+		hiddenDialogues: [],
+		skills: []
 	}
 
 	view.on('init', function(next){
-		Meter.model.find()
-			.sort('sortOrder')
+
+		HomePage.model.findOne()
 			.exec(function(err, result){
-				locals.data.skills = result.filter(function(item){
-					return item.type === 1;
-				});
-
-				locals.data.likes = result.filter(function(item){
-					return item.type === 2;
-				});
-
+				locals.data.content = result;
 				next(err);
 			});
 	});
 
 	view.on('init', function(next){
-		Work.model.find()
-			.sort('sortOrder')
-			.exec(function(err, result){
-				locals.data.works = result;
-				next(err);
-			});
-	});
 
-	view.on('init', function(next){
-		Sample.model.find()
+		Skill.model.find()
 			.sort('sortOrder')
+			.select('name')
 			.exec(function(err, result){
-				locals.data.samples = result;
+				locals.data.skills = result;
 				next(err);
 			});
 	});

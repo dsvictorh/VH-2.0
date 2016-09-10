@@ -40,7 +40,10 @@ exports = module.exports = function(app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/legacy', routes.views.indexOld);
+
+	//API
 	app.post('/api/mail/send', keystone.middleware.api, routes.api.mail.send);
+	app.get('/api/hiddenDialogue/list', keystone.middleware.api, routes.api.hiddenDialogue.list);
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

@@ -28,29 +28,27 @@
 		{{/if}}
 	</head>
 	<body ng-app="vh-gg">
-		{{#if heroBackground}}
+		{{#if data.content.heroBackground}}
 		<div class="hero-background">
-			<img src="{{heroBackground}}" />
+			<img src="{{data.content.heroBackground}}" />
 		</div>
 		{{/if}}
 		<header>
 			<nav class="nav-main flexbox">
-				<ul class="flexbox fill-space">
-					<li class="logo">
-						<a href="/">
+				<ul class="flexbox fill-space" focusable-objects>
+					<li>
+						<a href="/" class="logo" focus-object>
 							<img src="/img/logo/logo-color.png" alt="About me" />
 						</a>		
 					</li>
 					<li>
-						<a href="/">Samples</a>
+						<a href="/" focus-object>Samples</a>
 					</li>
 					<li>
-						<a href="/">Contact</a>
+						<a href="/" focus-object>Contact</a>
 					</li>
 				</ul>
-				<button>
-					<a href="/">Gamers Only</a>
-				</button>	
+				<a href="/" class="button gamers">Gamers Only</a>
 			</nav>
 		</header>
 		<main>
@@ -58,24 +56,24 @@
 		</main>
 		<footer>
 			<nav class="flexbox align-items-center">
-				<ul class="flexbox fill-space">
+				<ul class="flexbox fill-space" focusable-objects>
 					<li>
-						<a href="https://www.linkedin.com/in/dsvictorh" target="_blank" class="linked-in"></a>
+						<a href="https://www.linkedin.com/in/dsvictorh" target="_blank" class="linked-in" focus-object></a>
 					</li>
 					<li>
-						<a href="https://github.com/dsvictorh/" class="github"></a>
+						<a href="https://github.com/dsvictorh/" class="github" target="_blank" focus-object></a>
 					</li>
 					<li>
-						<a href="https://www.facebook.com/dsvictorh" class="facebook"></a>
+						<a href="https://www.facebook.com/dsvictorh" class="facebook" target="_blank" focus-object></a>
 					</li>
 					<li>
-						<a href="https://twitter.com/dsvictorh" class="twitter"></a>
+						<a href="https://twitter.com/dsvictorh" class="twitter" target="_blank" focus-object></a>
 					</li>
 					<li>
-						<a href="https://plus.google.com/u/0/+VictorHerreraR" class="google"></a>
+						<a href="https://plus.google.com/u/0/+VictorHerreraR" class="google" target="_blank" focus-object></a>
 					</li>
 					<li>
-						<a href="mailto:dsvictorh@gmail.com" class="email"></a>
+						<a href="mailto:dsvictorh@gmail.com" class="email" target="_blank" focus-object></a>
 					</li>
 				</ul>
 				<small>&copy;Victor Herrera {[{currentYear}]}</small>

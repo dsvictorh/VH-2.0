@@ -9,9 +9,12 @@
     "dotenv": "^1.1.0",
     "express-handlebars": "^1.1.0",
     "handlebars": "^2.0.0",
+    "jstransformer": "^1.0.0",
     "keystone": "^0.3.16",
+    "model-transform": "^2.0.0",
     "moment": "^2.10.6",
     "nodemailer": "^2.1.0",
+    "pug": "^0.1.0",
     "underscore": "^1.8.3"
   },
   "devDependencies": {

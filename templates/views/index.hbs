@@ -1,30 +1,37 @@
-<article class="module no-bottom-space hero">
+<article class="module no-bottom-space hero hidden-vh">
 	<div class="content-wrapper">
 		<section class="text-image flexbox">
 			<div>
-				<h1>Victor Herrera</h1>
-				<p>Hi there, and welcome to my site! My name is Victor Herrera, I'm a Senior Web Developer focused on innovative yet intuitive and familiar solutions. </p>
-				<p>I want to tell you a little bit about myself and since they say a picture is worth 1000 words I figured a website might be around 10000. </p>
+				<h1>{{data.content.title}}</h1>
+				<p>{{data.content.titleFirstParagraph}}</p>
+				<p>{{data.content.titleSecondParagraph}}</p>
 			</div>
 			<figure class="align-end">
-				<img src="/img/about-me/vh.png" />
+				<img src="{{data.content.titleImage}}" />
 			</figure>
 		</section>
+		<div class="vh" ng-controller="HiddenVHController" easter-egg>
+			<i></i>
+			<i></i>
+			<div class="flexbox align-items-center">
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices lacus id velit efficitur, porta rutrum neque rutrum asdsa asda asdasd asda asdasdadasdasda</p>
+			</div>
+			<img ng-click="runSequence()" src="{{data.content.hiddenVHImage}}" />
+		</div>
 	</div>
 </article>
-<article class="module">
+<article class="module hide-vh">
 	<div class="content-wrapper">
 		<section class="skills-viewer flexbox">
-			<ul class="fill-space">
-				<li ng-click="loadSkills('front-end')">Front-End <i></i></li>
-				<li ng-click="loadSkills('front-end')">Back-End <i></i></li>
-				<li ng-click="loadSkills('front-end')">Personal <i></i></li>
-				<li ng-click="loadSkills('front-end')">Interests <i></i></li>
+			<ul class="fill-space" focusable-objects>
+				{{#each data.skills}}
+					<li ng-click="loadSkills('{{name}}')" focus-object>{{name}} <i></i></li>
+				{{/each}}
 			</ul>
 			<div class="viewer">
 				<div class="flexbox justify-space-around flex-wrap">
 					<figure>
-						<figcaption>HTML</figcaption>
+						<figcaption>HTML5</figcaption>
 						<div class="percentage-circle">
 							<div class="quarter" style="transform: rotate(45deg);"></div>
 						    <div class="quarter" style="transform: rotate(135deg);"></div>
@@ -35,7 +42,7 @@
 						</div>
 					</figure>
 					<figure>
-						<figcaption>HTML</figcaption>
+						<figcaption>HTML3</figcaption>
 						<div class="percentage-circle">
 							<div class="quarter" style="transform: rotate(45deg);"></div>
 						    <div class="quarter" style="transform: rotate(135deg);"></div>
@@ -58,18 +65,18 @@
 					</figure>
 				</div>
 				<div class="details">
-					<h4>Related skills:</h4>
+					<h4>Other Skills/Tools:</h4>
 					<ul>
-						<li>HTML5</li>
-						<li>CSS3</li>
-						<li>JS</li>
 						<li>Angular</li>
 						<li>jQuery</li>
 						<li>KnockoutJS</li>
+						<li>Handlebars</li>
+						<li>RequireJS</li>
 						<li>UI/UX</li>
 						<li>PhotoShop</li>
+						<li>And more...</li>
 					</ul>
-					<p>As a Front-End expert I never leave aside the importance of the most simple things. My understanding of the document's flow, specificity and how the browser interprets the styles is what I consider my #1 skill. Also I'm really good at CSS animations.</p>
+					<p>As a Front-End expert I never leave aside the importance of the most simple things. My understanding of the document's flow, specificity and how the browser interprets the styles is what I consider my #1 skill. I also have a good eye for those details that really make a difference in designs.</p>
 				</div>
 			</div>
 		</section>
