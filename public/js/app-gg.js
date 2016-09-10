@@ -26,18 +26,5 @@ vh.directive('focusableObjects', function(){
 	}
 });
 
-vh.directive('easterEgg', function(){
-	return{
-		restrict: 'A',
-		link: function(scope, elem, attr){
-			$(elem).on('click', function (e) {
-				if(!$(this).hasClass('active')){
-					$(this).addClass("active");
-				}
-			});
-		}
-	}
-});
-
 
 

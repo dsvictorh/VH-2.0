@@ -10,13 +10,13 @@
 				<img src="{{data.content.titleImage}}" />
 			</figure>
 		</section>
-		<div class="vh" ng-controller="HiddenVHController" easter-egg>
+		<div class="vh" ng-controller="HiddenVHController">
 			<i></i>
 			<i></i>
 			<div class="flexbox align-items-center">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices lacus id velit efficitur, porta rutrum neque rutrum asdsa asda asdasd asda asdasdadasdasda</p>
+				<p>{[{dialogue}]}</p>
 			</div>
-			<img ng-click="runSequence()" src="{{data.content.hiddenVHImage}}" />
+			<img ng-click="runSequence($event)" src="{{data.content.hiddenVHImage}}" />
 		</div>
 	</div>
 </article>

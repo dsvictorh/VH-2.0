@@ -5,7 +5,7 @@ exports.list = function(req, res){
 	var jsonResponse = {};
 
 	var result = new Promise(function(resolve, reject){
-		HiddenDialogue.model.find({ isSecret: req.body.isSecret})
+		HiddenDialogue.model.find()
 			.sort('sortOrder')
 			.exec(function(err, result){
 				if(err)
@@ -16,7 +16,17 @@ exports.list = function(req, res){
 	}); 
 
 	result.then(function(result){
-		jsonResponse.skills = result;
+		var secrets = result.filter(function(item){
+			return item.isSecret;
+		});	
+
+		jsonResponse.skills = result.filter(function(item){
+			return !item.isSecret;
+		});
+
+		if(secrets.length){
+			jsonResponse.skills.push(secrets[Math.floor(Math.random() * (secrets.length - 1))]);
+		}
 		jsonResponse.responseCode = 200;
 		
 	}).catch(function(err){
