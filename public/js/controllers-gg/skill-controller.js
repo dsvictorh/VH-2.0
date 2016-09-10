@@ -1,13 +1,13 @@
 vh.controller('SkillController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout){
 	$scope.viewerActive = true;
-	$scope.activeSkill = 'First';
-	$scope.loadSkill = function(name, e){
+	$scope.activeIndex = 0;
+	$scope.loadSkill = function(index){
 		if($scope.activeSkill != name){
 			$scope.viewerActive = false;
-			$scope.activeSkill = '';
+			$scope.activeIndex = null;
 
 			$timeout(function(){
-				$scope.activeSkill = name;
+				$scope.activeIndex = index;
 				$scope.viewerActive = true;
 			}, 1210);	
 		}

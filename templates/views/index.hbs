@@ -25,7 +25,7 @@
 		<section class="skills-viewer flexbox" ng-controller="SkillController">
 			<ul class="fill-space" focusable-objects>
 				{{#each data.skills}}
-					<li ng-click="loadSkill('{{name}}')" ng-class="{ active: activeSkill == '{{name}}' {{#if @first}} || activeSkill == 'First'{{/if}} }" focus-object>{{name}} <i></i></li>
+					<li ng-click="loadSkill({{@index}})" ng-class="{ active: activeIndex == {{@index}} }" focus-object>{{name}} <i></i></li>
 				{{/each}}
 			</ul>
 			<div class="viewer" ng-class="{ active: viewerActive }">
