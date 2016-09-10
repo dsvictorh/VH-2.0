@@ -7,7 +7,6 @@ vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService',
 		SkillService.getFirst().then(function(response){
 			$scope.viewerActive = true;
 			$scope.activeSkill = response.data.skill;
-			console.log($scope.activeSkill);
 		});
 	};
 
@@ -16,6 +15,10 @@ vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService',
 			SkillService.get(id).then(function(response){
 				$scope.viewerActive = false;
 				$scope.hide = true;
+
+				$timeout(function(){
+					$scope.activeSkill = null;
+				}, 1200);
 
 				$timeout(function(){
 					$scope.activeSkill = response.data.skill;
