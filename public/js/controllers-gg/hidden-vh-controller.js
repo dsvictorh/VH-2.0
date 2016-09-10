@@ -1,14 +1,10 @@
-vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', function($scope, $http, $timeout){
+vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', 'HiddenDialogueService', function($scope, $http, $timeout, HiddenDialogueService){
 	$scope.dialogue = '';
 	$scope.runSequence = function(e){
 		var element = $(e.target).parent();
 		if(!element.hasClass('active')){
 			element.addClass('active');
-			$http({
-				url: '/api/hiddenDialogue/list',
-				type: 'GET',
-				dataType: 'json',
-			}).then(function(response){
+			HiddenDialogueService.list().then(function(response){
 				var sentenceWait = 1000;
 				var interval = 0;
 				$timeout(function(){

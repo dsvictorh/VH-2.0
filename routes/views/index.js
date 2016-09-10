@@ -12,7 +12,13 @@ exports = module.exports = function(req, res) {
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.scripts = [{url: '/js/controllers-gg/hidden-vh-controller.js'}, {url: '/js/controllers-gg/skill-controller.js'}];
+	locals.scripts = [
+		{url: '/js/controllers-gg/hidden-vh-controller.js'}, 
+		{url: '/js/controllers-gg/skill-controller.js'}, 
+		{url: '/js/services-gg/hidden-dialogue-service.js'},
+		{url: '/js/services-gg/skill-service.js'}
+	];
+
 	locals.data = {
 		content: null,
 		hiddenDialogues: [],

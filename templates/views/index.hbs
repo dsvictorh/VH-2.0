@@ -25,58 +25,21 @@
 		<section class="skills-viewer flexbox" ng-controller="SkillController">
 			<ul class="fill-space" focusable-objects>
 				{{#each data.skills}}
-					<li ng-click="loadSkill({{@index}})" ng-class="{ active: activeIndex == {{@index}} }" focus-object>{{name}} <i></i></li>
+					<li ng-click="loadSkill('{{_id}}')" ng-class="{ active: activeSkill._id == '{{_id}}' && !hide }" focus-object>{{name}} <i></i></li>
 				{{/each}}
 			</ul>
 			<div class="viewer" ng-class="{ active: viewerActive }">
 				<div class="flexbox justify-space-around flex-wrap">
-					<figure>
-						<figcaption>HTML5</figcaption>
-						<div class="percentage-circle">
-							<div class="quarter" style="transform: rotate(45deg);"></div>
-						    <div class="quarter" style="transform: rotate(135deg);"></div>
-						    <div class="quarter" style="transform: rotate(225deg);"></div>
-						    <div class="quarter" style="transform: rotate(315deg);"></div>
-						    <div class="cover" style="display: none;"></div>
-						    <i class="text">100</i>
-						</div>
-					</figure>
-					<figure>
-						<figcaption>HTML3</figcaption>
-						<div class="percentage-circle">
-							<div class="quarter" style="transform: rotate(45deg);"></div>
-						    <div class="quarter" style="transform: rotate(135deg);"></div>
-						    <div class="quarter" style="transform: rotate(225deg);"></div>
-						    <div class="quarter" style="transform: rotate(315deg);"></div>
-						    <div class="cover" style="display: none;"></div>
-						    <i class="text">100</i>
-						</div>
-					</figure>
-					<figure>
-						<figcaption>HTML</figcaption>
-						<div class="percentage-circle">
-							<div class="quarter" style="transform: rotate(45deg);"></div>
-						    <div class="quarter" style="transform: rotate(135deg);"></div>
-						    <div class="quarter" style="transform: rotate(225deg);"></div>
-						    <div class="quarter" style="transform: rotate(315deg);"></div>
-						    <div class="cover" style="display: none;"></div>
-						    <i class="text">100</i>
-						</div>
-					</figure>
+					<percentage-circle title="{[{activeSkill.meterSkill1}]}" percentage="{[{activeSkill.meterSkillPercentage2}]}"></percentage-circle>
+					<percentage-circle title="{[{activeSkill.meterSkill2}]}" percentage="{[{activeSkill.meterSkillPercentage2}]}"></percentage-circle>
+					<percentage-circle title="{[{activeSkill.meterSkill3}]}" percentage="{[{activeSkill.meterSkillPercentage3}]}"></percentage-circle>	
 				</div>
 				<div class="details">
-					<h4>Other Skills/Tools:</h4>
+					<h4>{[{activeSkill.extraSkillsTitle}]}</h4>
 					<ul>
-						<li>Angular</li>
-						<li>jQuery</li>
-						<li>KnockoutJS</li>
-						<li>Handlebars</li>
-						<li>RequireJS</li>
-						<li>UI/UX</li>
-						<li>PhotoShop</li>
-						<li>And more...</li>
+						<li ng-repeat="skill in activeSkill.extraSkills track by $index">{[{skill}]}</li>
 					</ul>
-					<p>As a Front-End expert I never leave aside the importance of the most simple things. My understanding of the document's flow, specificity and how the browser interprets the styles is what I consider my #1 skill. I also have a good eye for those details that really make a difference in designs.</p>
+					<p>{[{activeSkill.description}]}</p>
 				</div>
 			</div>
 		</section>
