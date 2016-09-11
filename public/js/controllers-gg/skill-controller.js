@@ -1,4 +1,6 @@
 vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService', function($scope, $http, $timeout, SkillService){
+	var locked = false;
+
 	$scope.viewerActive = false;
 	$scope.activeSkill = null;
 	$scope.hide = false;
@@ -11,7 +13,8 @@ vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService',
 	};
 
 	$scope.loadSkill = function(id){
-		if($scope.activeSkill._id != id){
+		if($scope.activeSkill._id != id && !locked){
+			locked = true;
 			SkillService.get(id).then(function(response){
 				$scope.viewerActive = false;
 				$scope.hide = true;
@@ -24,8 +27,12 @@ vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService',
 					$scope.activeSkill = response.data.skill;
 					$scope.viewerActive = true;
 					$scope.hide = false;
+					locked = false;
 				}, 1210);	
-			})
+			}, function(error){
+				locked = false;
+				$scope.errors = ['An error has occured. Please contact the admin and try again later'];
+			});
 		}
 	};
 

@@ -23,7 +23,7 @@ vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', 'HiddenDialo
 					});
 				}, 1500);
 			}, function(error){
-				$scope.messages = ['An error has occured. Please contact the admin and try again later'];
+				$scope.errors = ['An error has occured. Please contact the admin and try again later'];
 			});
 		}
 	}
