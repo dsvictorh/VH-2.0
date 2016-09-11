@@ -3,11 +3,10 @@ var Skill = keystone.list('Skill');
 
 exports.get = function(req, res){
 	var jsonResponse = {};
-	
+
 	var result = new Promise(function(resolve, reject){
 		Skill.model.findById(req.params.id)
 			.exec(function(err, result){
-				console.log(result);
 				if(err){
 					jsonResponse.responseCode = 500;
 					reject(err);
@@ -40,7 +39,6 @@ exports.getFirst = function(req, res){
 			.sort('sortOrder')
 			.limit(1)
 			.exec(function(err, result){
-				console.log(result);
 				if(err){
 					jsonResponse.responseCode = 500;
 					reject(err);

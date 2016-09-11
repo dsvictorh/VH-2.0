@@ -17,7 +17,7 @@ vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', 'HiddenDialo
 									$scope.dialogue += value;
 								}, time);
 							})(interval);
-							interval += 70;
+							interval += 50;
 						});	
 						interval += sentenceWait;	
 					});

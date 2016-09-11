@@ -26,7 +26,6 @@ exports = module.exports = function(req, res) {
 	}
 
 	view.on('init', function(next){
-
 		HomePage.model.findOne()
 			.exec(function(err, result){
 				locals.data.content = result;
