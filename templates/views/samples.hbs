@@ -9,13 +9,16 @@
 	<div class="content-wrapper flexbox justify-center flex-wrap question-boxes">
 		<figure>
 			<p class="question" ng-click="loadQuestion($event)"></p>
-			<form class="question-form" ng-submit="">
-				<p>{[{question.question}]}</p>
+			<form class="question-form">
+				<p>{[{question.response || question.question}]}</p>
 				<label ng-repeat="answer in question.answers track by $index">
-					<input type="radio" name="answer" value="{[{$index + 1}]}" />	
+					<input type="radio" name="answer" value="{[{$index + 1}]}" ng-model="answerOption.option" ng-change="answerQuestion()" ng-disabled="answering" />	
 					<span>{[{answer}]}</span>
 				</label>
 			</form>
+			<div class="sample {[{answering}]}" ng-if="sample && !answering">
+				<p>{[{sample.text}]}</p>
+			</div>
 			<div>
 				<i></i>
 				<i></i>

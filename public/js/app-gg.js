@@ -21,6 +21,11 @@ var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
 	    	}, 5500);
     	}
     });
+
+    $(window).load(function(){
+    	var html = $('html');
+    	html.addClass('ready').removeClass('loading');
+    });
 });
 
 

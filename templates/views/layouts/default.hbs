@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="loading">
 	<head prefix="og: http://ogp.me/ns#">
 		<title>Victor Herrera - Web Developer</title>
 		<meta name="description" content="Senior Web Developer - Fan of simplistic yet astonishing digital solutions"/>
@@ -28,6 +28,11 @@
 		{{/if}}
 	</head>
 	<body ng-app="vh-gg">
+		<div class="loader">
+			<figure>
+				<img src="/img/logo/logo-big.png" />
+			</figure>
+		</div>
 		{{#if data.content.heroBackground}}
 		<div class="hero-background">
 			<img src="{{data.content.heroBackground}}" />
