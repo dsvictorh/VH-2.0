@@ -1,4 +1,4 @@
-vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', 'HiddenDialogueService', function($scope, $http, $timeout, HiddenDialogueService){
+vh.controller('HiddenVHController', ['$scope', '$rootScope', '$timeout', 'HiddenDialogueService', function($scope, $rootScope, $timeout, HiddenDialogueService){
 	$scope.dialogue = '';
 	$scope.runSequence = function(e){
 		var element = $(e.target).parent();
@@ -23,7 +23,7 @@ vh.controller('HiddenVHController', ['$scope', '$http', '$timeout', 'HiddenDialo
 					});
 				}, 1500);
 			}, function(error){
-				$scope.errors = ['An error has occured. Please contact the admin and try again later'];
+				$rootScope.errors = ['An error has occured. Please contact the admin and try again later'];
 			});
 		}
 	}

@@ -1,14 +1,21 @@
 <article class="module no-bottom-space">
 	<div class="content-wrapper box">
-		<h1>Where did the samples go?</h1>
-		<p>I'd like to show you some fun little samples with my work but they have a tendency for switching places without telling anyone. Unfortunately you are going to have to find them.</p>
-		<p>From what I can see the little jokers are hiding behind those magical question boxes, you will have to answer a question before they open up. Good luck!</p>
+		<h1>{{data.content.title}}</h1>
+		<p>{{data.content.titleFirstParagraph}}</p>
+		<p>{{data.content.titleSecondParagraph}}</p>
 	</div>
 </article>
-<article class="module">
+<article class="module" ng-controller="QuestionBoxesController">
 	<div class="content-wrapper flexbox justify-center flex-wrap question-boxes">
 		<figure>
-			<p class="question"></p>
+			<p class="question" ng-click="loadQuestion($event)"></p>
+			<form class="question-form" ng-submit="">
+				<p>{[{question.question}]}</p>
+				<label ng-repeat="answer in question.answers track by $index">
+					<input type="radio" name="answer" value="{[{$index + 1}]}" />	
+					<span>{[{answer}]}</span>
+				</label>
+			</form>
 			<div>
 				<i></i>
 				<i></i>
@@ -17,28 +24,40 @@
 			</div>
 		</figure>
 		<figure>
-			<i></i>
-			<i></i>
-			<i></i>
-			<i></i>
+			<p class="question" ng-click="loadQuestion($event)"></p>
+			<div class="question-form">
+				<p>{[{question.question}]}</p>
+			</div>
+			<div>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
 		</figure>
 		<figure>
-			<i></i>
-			<i></i>
-			<i></i>
-			<i></i>
+			<p class="question" ng-click="loadQuestion($event)"></p>
+			<div class="question-form">
+				<p>{[{question.question}]}</p>
+			</div>
+			<div>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
 		</figure>
 		<figure>
-			<i></i>
-			<i></i>
-			<i></i>
-			<i></i>
-		</figure>
-		<figure>
-			<i></i>
-			<i></i>
-			<i></i>
-			<i></i>
+			<p class="question" ng-click="loadQuestion($event)"></p>
+			<div class="question-form">
+				<p>{[{question.question}]}</p>
+			</div>
+			<div>
+				<i></i>
+				<i></i>
+				<i></i>
+				<i></i>
+			</div>
 		</figure>
 	</div>
 </article>

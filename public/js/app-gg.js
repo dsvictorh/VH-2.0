@@ -1,7 +1,26 @@
 var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
-}).run(function($rootScope) {
+}).run(function($rootScope, $timeout) {
+	var warningsTimeout;
+	var errorsTimeout;
     $rootScope.currentYear = new Date().getFullYear();
+    $rootScope.$watch('warnings', function(){
+    	if(!warningsTimeout){
+    		warningsTimeout = $timeout(function(){
+    			warningsTimeout = null;
+	    		$rootScope.warnings = null;
+	    	}, 3500);
+    	}
+    });
+
+    $rootScope.$watch('errors', function(){
+    	if(!errorsTimeout){
+    		errorsTimeout = $timeout(function(){
+	    		$rootScope.errors = null;
+	    		errorsTimeout = null;
+	    	}, 5500);
+    	}
+    });
 });
 
 

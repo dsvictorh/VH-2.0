@@ -271,6 +271,62 @@ p{
 	z-index: 2;
 }
 
+.warnings{
+    position: fixed;
+    top: 35%;
+    left: 40%;
+    width: 20%;
+    background: rgba(171, 171, 24, 0.5);
+    padding: 1%;
+    border-radius: 10px;
+
+    .animation(
+	 fadeOutMessages,
+	 @duration: 2.3s, 
+	 @delay: 1s,
+	 @fillMode: forwards, 
+	 @direction: normal, 
+	 @timingFunction: linear);
+
+    p{
+	    color: @color-white;
+	    .awesome-icon('\f071', before, @color: @color-yellow, @margin-right: 5px, @size: 1rem);
+    }
+}
+
+.errors{
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    width: 20%;
+    background: @color-red;
+    padding: 1%;
+    border-radius: 10px;
+
+    .animation(
+	 fadeOutMessages,
+	 @duration: 3.3s, 
+	 @delay: 2s,
+	 @fillMode: forwards, 
+	 @direction: normal, 
+	 @timingFunction: linear);
+
+    p{
+	    color: @color-white;
+	    .awesome-icon('\f071', before, @color: @color-danger, @margin-right: 5px, @size: 1rem);
+    }
+}
+
+.keyframes(fadeOutMessages, {
+	0%{
+		opacity: 1;
+	}
+
+	100%{
+		opacity: 0;
+	}
+});
+
 .module{
 	display: flex;
 	padding: 60px 20px;

@@ -1,4 +1,4 @@
-vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService', function($scope, $http, $timeout, SkillService){
+vh.controller('SkillController', ['$scope', '$rootScope', '$timeout', 'SkillService', function($scope, $rootScope, $timeout, SkillService){
 	var locked = false;
 
 	$scope.viewerActive = false;
@@ -31,7 +31,7 @@ vh.controller('SkillController', ['$scope', '$http', '$timeout', 'SkillService',
 				}, 1210);	
 			}, function(error){
 				locked = false;
-				$scope.errors = ['An error has occured. Please contact the admin and try again later'];
+				$rootScope.errors = ['An error has occured. Please contact the admin and try again later'];
 			});
 		}
 	};

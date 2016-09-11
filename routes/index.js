@@ -47,6 +47,7 @@ exports = module.exports = function(app) {
 	app.get('/api/hiddenDialogue/list', keystone.middleware.api, routes.api.hiddenDialogue.list);
 	app.get('/api/skill/first', keystone.middleware.api, routes.api.skill.getFirst);
 	app.get('/api/skill/:id', keystone.middleware.api, routes.api.skill.get);
+	app.get('/api/question/random', keystone.middleware.api, routes.api.question.getRandom);
 
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
