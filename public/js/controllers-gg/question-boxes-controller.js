@@ -17,6 +17,7 @@ vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'Q
 			});
 		}else{
 			$rootScope.warnings = ['A question is already awaiting your answer'];
+			$rootScope.errors = ['A question is already awaiting your answer'];
 		}
 	}
 }]);

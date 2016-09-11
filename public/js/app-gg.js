@@ -5,7 +5,7 @@ var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
 	var errorsTimeout;
     $rootScope.currentYear = new Date().getFullYear();
     $rootScope.$watch('warnings', function(){
-    	if(!warningsTimeout){
+    	if(!warningsTimeout && $rootScope.warnings){
     		warningsTimeout = $timeout(function(){
     			warningsTimeout = null;
 	    		$rootScope.warnings = null;
@@ -14,10 +14,10 @@ var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
     });
 
     $rootScope.$watch('errors', function(){
-    	if(!errorsTimeout){
+    	if(!errorsTimeout && $rootScope.errors){
     		errorsTimeout = $timeout(function(){
+    			errorsTimeout = null;
 	    		$rootScope.errors = null;
-	    		errorsTimeout = null;
 	    	}, 5500);
     	}
     });
