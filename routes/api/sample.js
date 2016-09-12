@@ -1,11 +1,11 @@
 var keystone = require('keystone');
-var Question = keystone.list('Question');
+var SampleProject = keystone.list('SampleProject');
 
-exports.getRandom = function(req, res){
+exports.list = function(req, res){
 	var jsonResponse = {};
 
 	var result = new Promise(function(resolve, reject){
-		Question.model.find()
+		SampleProject.model.find()
 			.sort('sortOrder')
 			.exec(function(err, result){
 				if(err)
@@ -16,10 +16,7 @@ exports.getRandom = function(req, res){
 	}); 
 
 	result.then(function(result){
-		if(result.length){
-			jsonResponse.question = result[Math.floor(Math.random() * (result.length - 1))];
-		}
-
+		jsonResponse.samples = result;
 		jsonResponse.responseCode = 200;
 	}).catch(function(err){
 		console.log(err);

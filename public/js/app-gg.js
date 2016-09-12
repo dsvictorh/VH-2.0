@@ -3,6 +3,8 @@ var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
 }).run(function($rootScope, $timeout) {
 	var warningsTimeout;
 	var errorsTimeout;
+
+	$rootScope.modalTemplate = null;
     $rootScope.currentYear = new Date().getFullYear();
     $rootScope.$watch('warnings', function(){
     	if(!warningsTimeout && $rootScope.warnings){

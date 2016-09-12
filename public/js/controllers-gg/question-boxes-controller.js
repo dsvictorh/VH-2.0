@@ -1,55 +1,63 @@
-vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'QuestionService', function($scope, $rootScope, $timeout, QuestionService){
-	var locked = false;
-	
-	$scope.answering = false;
-	$scope.question = null;
+vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'QuestionService', 'SampleService', function($scope, $rootScope, $timeout, QuestionService, SampleService){
+	$scope.samples = [];
 	$scope.answerOption = {
 		option: null,
 	};
-	$scope.loadQuestion = function(e){
-		if(!locked){
-			locked = true;
-			QuestionService.getRandom().then(function(response){
-				$(e.target).addClass('hide');
-				$timeout(function(){
-					$(e.target).parent().removeClass('wrong').addClass('asking');
-					$scope.question = response.data.question;
-				}, 1200);				
-			}, function(error){
-				locked = false;
-				$rootScope.errors = ['An error has occured. Please contact the admin and try again later'];
-			});
-		}else{
-			$rootScope.warnings = ['A question is already awaiting your answer'];
-		}
+
+	var init = function(){
+		SampleService.list().then(function(response){
+			$scope.samples = response.data.samples;
+			for(var i = 0; i < $scope.samples.length; i++){
+				$scope.samples[i].answerOption = {
+					option: null
+				}
+			}
+		}, function(error){
+			$rootScope.errors = ['An error has occured. Please contact the admin and try again later'];
+		});
+	}
+
+	$scope.loadQuestion = function(e, sample){
+		QuestionService.getRandom().then(function(response){
+			sample.hide = true;
+			$timeout(function(){
+				sample.wrong = false;
+				sample.asking = true;
+				sample.question = response.data.question;
+			}, 1200);				
+		}, function(error){
+			$rootScope.errors = ['An error has occured. Please contact the admin and try again later'];
+		});
 	};
 
-	$scope.answerQuestion = function(){
-		if(!$scope.answering){
-			$scope.answering = true;
-			var answer = parseInt($scope.answerOption.option) || 0;
-			var questionEl = $('.hide');
+	$scope.answerQuestion = function(sample){
+		if(!sample.answering){
+			sample.answering = true;
+			var answer = parseInt(sample.answerOption.option) || 0;
 
-			if(answer == $scope.question.rightAnswer){
-				questionEl.parent().addClass('right');
-				$scope.question.response = $scope.question.rightAnswerResponse;
-				$scope.sample = {
-					text: 'hi'
-				};
+			if(answer == sample.question.rightAnswer){
+				sample.right = true;
+				sample.question.response = sample.question.rightAnswerResponse;
+				sample.correct = true;
 			}
 			else{
-				questionEl.parent().addClass('wrong');
-				$scope.question.response = 'Incorrect! You\'ll have to try again';
+				sample.wrong = true;
+				sample.question.response = 'Incorrect! You\'ll have to try again';
 			}
 
 			$timeout(function(){
-				questionEl.parent().addClass('answered');
-				questionEl.removeClass('hide');
-				$scope.question = null;
-				$scope.answering = false;
-				$scope.answerOption.option = null;
-				locked = false;
+				sample.answered = true;
+				sample.hide = false;
+				sample.question = null;
+				sample.answering = false;
+				sample.answerOption.option = null;
 			}, 4000);
 		}
 	};
+
+	$scope.showSample = function(sample){
+		$rootScope.modalTemplate = sample;
+	}
+
+	init();
 }]);

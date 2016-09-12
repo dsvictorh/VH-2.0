@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading">
+<html ng-app="vh-gg" class="loading" ng-class="{loading: modalTemplate}">
 	<head prefix="og: http://ogp.me/ns#">
 		<title>Victor Herrera - Web Developer</title>
 		<meta name="description" content="Senior Web Developer - Fan of simplistic yet astonishing digital solutions"/>
@@ -27,7 +27,7 @@
 			<script src='https://www.google.com/recaptcha/api.js'></script>
 		{{/if}}
 	</head>
-	<body ng-app="vh-gg">
+	<body>
 		<div class="loader">
 			<figure>
 				<img src="/img/logo/logo-big.png" />
@@ -90,6 +90,9 @@
 				<small>&copy;Victor Herrera {[{currentYear}]}</small>
 			</nav>
 		</footer>
+		<div class="modal" ng-if="modalTemplate">
+			<section class="modal-content"></section>
+		</div>
 		<script src="/lib/jquery.js"></script>
 		<script src="/lib/angular.js"></script>
 		<script src="/js/app-gg.js"></script>

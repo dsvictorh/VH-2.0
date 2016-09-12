@@ -7,54 +7,18 @@
 </article>
 <article class="module" ng-controller="QuestionBoxesController">
 	<div class="content-wrapper flexbox justify-center flex-wrap question-boxes">
-		<figure>
-			<p class="question" ng-click="loadQuestion($event)"></p>
+		<figure ng-repeat="sample in samples track by sample._id" ng-class="{right: sample.right, wrong: sample.wrong, answered: sample.answered, asking: sample.asking}">
+			<p class="question" ng-class="{hide: sample.hide}" ng-click="loadQuestion($event, sample)"></p>
 			<form class="question-form">
-				<p>{[{question.response || question.question}]}</p>
-				<label ng-repeat="answer in question.answers track by $index">
-					<input type="radio" name="answer" value="{[{$index + 1}]}" ng-model="answerOption.option" ng-change="answerQuestion()" ng-disabled="answering" />	
+				<p>{[{sample.question.response || sample.question.question}]}</p>
+				<label ng-repeat="answer in sample.question.answers track by $index">
+					<input type="radio" name="answer" value="{[{$index + 1}]}" ng-model="sample.answerOption.option" ng-change="answerQuestion(sample)" ng-disabled="sample.answering" />	
 					<span>{[{answer}]}</span>
 				</label>
 			</form>
-			<div class="sample {[{answering}]}" ng-if="sample && !answering">
-				<p>{[{sample.text}]}</p>
-			</div>
-			<div>
-				<i></i>
-				<i></i>
-				<i></i>
-				<i></i>
-			</div>
-		</figure>
-		<figure>
-			<p class="question" ng-click="loadQuestion($event)"></p>
-			<div class="question-form">
-				<p>{[{question.question}]}</p>
-			</div>
-			<div>
-				<i></i>
-				<i></i>
-				<i></i>
-				<i></i>
-			</div>
-		</figure>
-		<figure>
-			<p class="question" ng-click="loadQuestion($event)"></p>
-			<div class="question-form">
-				<p>{[{question.question}]}</p>
-			</div>
-			<div>
-				<i></i>
-				<i></i>
-				<i></i>
-				<i></i>
-			</div>
-		</figure>
-		<figure>
-			<p class="question" ng-click="loadQuestion($event)"></p>
-			<div class="question-form">
-				<p>{[{question.question}]}</p>
-			</div>
+			<figure class="sample" ng-if="sample.correct && !sample.answering">
+				<img src="/img/samples/vh.png" ng-click="showSample(sample)" />
+			</figure>
 			<div>
 				<i></i>
 				<i></i>

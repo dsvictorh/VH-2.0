@@ -10,7 +10,8 @@ exports = module.exports = function(req, res) {
 	// item in the header navigation.
 	locals.scripts = [
 		{url: '/js/controllers-gg/question-boxes-controller.js'},
-		{url: '/js/services-gg/question-service.js'}
+		{url: '/js/services-gg/question-service.js'},
+		{url: '/js/services-gg/sample-service.js'}
 	];
 
 	locals.data = {
