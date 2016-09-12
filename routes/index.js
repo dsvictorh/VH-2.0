@@ -27,6 +27,22 @@ var bodyParser = require('body-parser');
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 
+keystone.set('403', function (req, res, next) {
+	res.status(403).render('errors/403',  { layout: 'error' });
+});
+
+keystone.set('404', function (req, res, next) {
+	res.status(404).render('errors/404',  { layout: 'error' });
+});
+
+keystone.set('500', function (req, res, next) {
+	res.status(500).render('errors/500',  { layout: 'error' });
+});
+
+keystone.set('503', function (req, res, next) {
+	res.status(503).render('errors/503',  { layout: 'error' });
+});
+
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
