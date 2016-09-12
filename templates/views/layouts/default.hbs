@@ -65,7 +65,7 @@
 				<p ng-repeat="error in errors track by $index">{[{error}]}</p>
 			</div>
 		</main>
-		<footer>
+		<footer class="site-footer">
 			<nav class="flexbox align-items-center">
 				<ul class="flexbox fill-space" focusable-objects>
 					<li>
@@ -90,12 +90,26 @@
 				<small>&copy;Victor Herrera {[{currentYear}]}</small>
 			</nav>
 		</footer>
-		<div class="modal" ng-if="modalTemplate">
-			<section class="modal-content"></section>
+		<div class="modal" ng-if="modalTemplate" ng-click="closeModal()">
+			<section class="modal-content" ng-click="stopPropagation($event)">
+				<i ng-click="closeModal()">X</i>
+				<section class="flexbox">
+					<figure class="fill-space">
+						<img ng-src="{[{modalTemplate.image}]}" alt="Sample Project" />
+					</figure>
+					<div focusable-objects>
+						<h2>{[{modalTemplate.name}]}</h2>
+						<p ng-bind-html="modalTemplate.description"></p>
+						<a href="{[{modalTemplate.git}]}" class="button" target="_blank" focus-object>Git Repository</a>
+						<a href="{[{modalTemplate.url}]}" class="button" target="_blank" ng-if="modalTemplate.url" focus-object>See Sample</a>
+					</div>
+				</section>
+			</section>
 		</div>
 		<script src="/lib/jquery.js"></script>
 		<script src="/lib/angular.js"></script>
 		<script src="/js/app-gg.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-sanitize.js"></script>
 		{{> scripts scripts=scripts}}
 	</body>
 </html>
