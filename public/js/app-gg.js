@@ -1,4 +1,4 @@
-var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
+var vh = angular.module('vh-gg', ['ngSanitize']).config(function($interpolateProvider){
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
 }).run(function($rootScope, $timeout) {
 	var warningsTimeout;
@@ -23,6 +23,14 @@ var vh = angular.module('vh-gg', []).config(function($interpolateProvider){
 	    	}, 5500);
     	}
     });
+
+    $rootScope.stopPropagation = function(e){
+    	e.stopPropagation();
+    }
+
+    $rootScope.closeModal = function(){
+    	$rootScope.modalTemplate = null;
+    }
 
     $(window).load(function(){
     	var html = $('html');
@@ -57,17 +65,17 @@ vh.directive('percentageCircle', function(){
 	return{
 		restrict: 'E',
 		replace: true,
-		template: `<figure>
-						<figcaption>{{title}}</figcaption>
-						<div class="percentage-circle">
-							<div class="quarter"></div>
-							<div class="quarter"></div>
-							<div class="quarter"></div>
-							<div class="quarter"></div>
-							<div class="cover"></div>
-							<i class="text"></i>
-						</div>
-					</figure>`,
+		template: '<figure>' +
+						'<figcaption>{{title}}</figcaption>' +
+						'<div class="percentage-circle">' +
+							'<div class="quarter"></div>' +
+							'<div class="quarter"></div>' +
+							'<div class="quarter"></div>' +
+							'<div class="quarter"></div>' +
+							'<div class="cover"></div>' +
+							'<i class="text"></i>' +
+						'</div>' +
+					'</figure>',
 		scope: {
 			title: '@title',
 			percetnage: '@percentage'

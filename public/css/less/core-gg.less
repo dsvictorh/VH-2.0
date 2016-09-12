@@ -90,11 +90,21 @@ button, .button{
 
 a, a:hover{
 	text-decoration: none;
-	color: inherit;
+	color: @color-hover;
+
+	.transition(color 0.5s linear);
+}
+
+a:hover{
+	color: @color-white;
 }
 
 :not(input):not(textarea):not(button):not(:active):focus{
 	outline: solid 2px @color-white;
+
+	@media all and (-ms-high-contrast:none){
+		outline: none;
+	}
 }
 
 :hover{
