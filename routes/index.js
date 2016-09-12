@@ -56,6 +56,7 @@ exports = module.exports = function(app) {
 	// Views
 	app.get('/', routes.views.index);
 	app.get('/samples', routes.views.samples);
+	app.get('/contact', routes.views.contact);
 	app.get('/legacy', routes.views.indexOld);
 
 	//API

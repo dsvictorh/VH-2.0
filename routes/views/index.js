@@ -1,7 +1,4 @@
 var keystone = require('keystone');
-var Meter = keystone.list('Meter');
-var Work = keystone.list('Work');
-var Sample = keystone.list('Sample');
 var HomePage = keystone.list('HomePage');
 var Skill = keystone.list('Skill');
 

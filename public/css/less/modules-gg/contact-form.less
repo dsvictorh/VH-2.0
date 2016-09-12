@@ -1,0 +1,38 @@
+.contact-form{
+	form{
+	    > div{
+	    	&:first-child{
+	    		flex-grow: 1;
+	    	}
+
+	    	&:last-child{
+    		    flex-grow: 3;
+    			margin-left: 50px;
+	    	}
+	    }
+
+	    .form-group{
+	    	margin-bottom: 20px;
+
+	    	label{
+	    		font-size: 2rem;
+	    		margin-bottom: 2px;
+	    	}
+
+	    	input[type="text"], input[type="email"], textarea{
+    		    width: 100%;
+			    margin: 0;
+			    border: 0;
+			    font-size: 2rem;
+			    padding: 5px;
+			    border-radius: 5px;
+			    box-sizing: border-box;
+	    	}
+
+	    	textarea{
+	    		height: 192px;
+	    		resize: none;
+	    	}
+	    }
+	}
+}
