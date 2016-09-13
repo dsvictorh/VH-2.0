@@ -17,9 +17,9 @@ exports.send = function(req, res){
 	}else if(req.body.name.match(textRegex)){
 		jsonResponse.status = 'invalid';
 		jsonResponse.messages.push('Name has non-valid characters');
-	}else if(req.body.name.length > 100){
+	}else if(req.body.name.length > 50){
 		jsonResponse.status = 'invalid';
-		jsonResponse.messages.push('Name\'s max length is 100 characters');
+		jsonResponse.messages.push('Name\'s max length is 50 characters');
 	}
 
 	if(!req.body.email.match(emailRegex)){
@@ -32,6 +32,17 @@ exports.send = function(req, res){
 	}else if(req.body.email.length > 100){
 		jsonResponse.status = 'invalid';
 		jsonResponse.messages.push('Email\'s max length is 100 characters');
+	}
+
+	if(!req.body.subject){
+		jsonResponse.status = 'invalid';
+		jsonResponse.messages.push('Subject is required');
+	}else if(req.body.subject.match(textRegex)){
+		jsonResponse.status = 'invalid';
+		jsonResponse.messages.push('Subject has non-valid characters');
+	}else if(req.body.subject.length > 100){
+		jsonResponse.status = 'invalid';
+		jsonResponse.messages.push('Subject\'s max length is 100 characters');
 	}
 
 	if(!req.body.message){
@@ -78,7 +89,7 @@ exports.send = function(req, res){
 						    from: ('"' + req.body.name + '" ' + '<' + req.body.email + '>'),
 						    replyTo: req.body.email,
 						    to: process.env.EMAIL,
-						    subject: ('VH Website - ' + req.body.name),
+						    subject: ('VH Website / ' + req.body.name + ' - ' + req.body.subject),
 						    text: req.body.message,
 						};
 

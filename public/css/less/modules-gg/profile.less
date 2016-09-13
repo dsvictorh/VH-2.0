@@ -1,17 +1,36 @@
 .profile{
 	.clear; 
-	
+
 	div{
    		width: 70%;
 	    margin: 0 10% 20px 0;
 	    padding-left: 20px;
 	    float: left;
 	    box-sizing: border-box;
+
+	    .media-mobile({
+			width: 55%;
+			margin-right: 5%;
+			padding-left: 0;
+	    });
+
+	    .media-mobile-small({
+			width: 100%;
+			margin: 0 10% 0 0;
+	    });
 	}
 
 	figure{
 	    float: right;
     	width: 20%;
+
+    	.media-mobile({
+			width: 40%;
+	    });
+
+	    .media-mobile-small({
+			display: none;
+	    });
 	}
 
 	h1{

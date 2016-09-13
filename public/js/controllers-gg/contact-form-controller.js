@@ -14,6 +14,7 @@ vh.controller('ContactFormController', ['$scope', '$rootScope', '$timeout', 'Ema
 	$scope.send = function(){
 		if(!locked){
 			locked = true;
+			$scope.email.recaptcha = grecaptcha.getResponse();
 			EmailService.sendMail($scope.email).then(function(response){
 				if(response.data.status === 'success'){
 					$rootScope.messages = response.data.messages;

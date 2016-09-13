@@ -174,6 +174,10 @@ main{
 		    padding: 0 10px;
 		});
 
+		.media-mobile-small({
+		    padding: 0 5px;
+		});
+
 		&.logo{
 			 padding: 15px 60px;
 			 line-height: 1;
@@ -182,6 +186,10 @@ main{
 			    padding: 5px 15px;
 			    width: 90%;
 			    box-sizing: border-box;
+		 	});
+
+		 	.media-mobile-small({
+			    padding: 5px 10px;
 		 	});
 		}
 	}
@@ -207,6 +215,10 @@ main{
 
     	.media-mobile({
 			padding: 0 20px;
+    	});
+
+    	.media-mobile-small({
+			padding: 0 15px;
     	});
 
     	.transition(none);
@@ -236,6 +248,12 @@ main{
 	    background: @color-primary-button;
 	    border-radius: 5px;
         box-shadow: 15px 15px 60px 0 @color-black;
+
+        h1{
+        	.media-mobile({
+				font-size: 3rem;
+        	});
+        }
 	}
 }
 
@@ -280,7 +298,7 @@ body{
     line-height: 1.3;
 
     .media-mobile({
-		min-width: 475px;
+		min-width: 0;
     });
 }
 
@@ -400,9 +418,17 @@ p{
     top: 35%;
     left: 40%;
     width: 20%;
-    background: rgba(171, 171, 24, 0.5);
+    background: rgba(171, 171, 24, 0.8);
     padding: 1%;
     border-radius: 10px;
+
+    .media-mobile({
+		left: 0;
+		margin: 0 10%;
+		width: 80%;
+		box-sizing: border-box;
+		padding: 20px;
+    });
 
     .animation(
 	 fadeOutMessages,
@@ -427,6 +453,15 @@ p{
     padding: 1%;
     border-radius: 10px;
 
+	.media-mobile({
+		left: 0;
+		margin: 0 10%;
+		width: 80%;
+		box-sizing: border-box;
+		padding: 20px;
+    });
+
+
     .animation(
 	 fadeOutMessages,
 	 @duration: 3.3s, 
@@ -446,9 +481,18 @@ p{
     top: 35%;
     left: 40%;
     width: 20%;
-    background: rgba(17,121,146, 0.5);
+    background: rgba(17,121,146, 0.8);
     padding: 1%;
     border-radius: 10px;
+
+    .media-mobile({
+		left: 0;
+		margin: 0 10%;
+		width: 80%;
+		box-sizing: border-box;
+		padding: 20px;
+    });
+
 
     .animation(
 	 fadeOutMessages,
@@ -468,9 +512,23 @@ p{
 .error-page{
 	text-align: center;
 
+	.media-mobile({
+		margin: 50px 0;
+	});
+
+	h1{
+		.media-mobile({
+		    font-size: 10rem;
+   		});
+	}
+
 	p{
-	    width: 45%;
    		margin: 0 auto;
+
+   		.media-mobile({
+   			width: 75%;
+		    font-size: 3rem;
+   		});
 	}
 }
 
@@ -503,6 +561,12 @@ p{
 	    box-sizing: border-box;
 	    padding: 30px;
 	    position: relative;
+	    .clear;
+
+	    .media-mobile({
+		    width: 80%;
+		    min-width: 0;
+		});
 
     	i{
     		position: absolute;
@@ -511,9 +575,28 @@ p{
 		    cursor: pointer;
     	}
 
+		figure{
+			width: 40%;
+			float: left;
+
+			.media-mobile({
+			    width: 100%;
+			});
+		}
+
     	div{
 		    padding-left: 15px;
-    		width: 100%;
+		    width: 60%;
+		    float: left;
+		    box-sizing: border-box;
+
+		    .media-mobile({
+			    width: 100%;
+			    float: left;
+			    box-sizing: border-box;
+			    margin-top: 11px;
+			    padding-left: 0;
+			});
     	}
 
     	img{
@@ -532,7 +615,7 @@ p{
 
     	.button{
     		display: inline-block;
-    		margin-right: 5px;
+    		margin: 10px 5px 0 0;
     		background: @color-primary-button;
     		border-radius: 5px;
     		padding: 10px;

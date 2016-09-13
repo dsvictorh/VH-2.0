@@ -23,7 +23,7 @@
 <article class="module hide-vh">
 	<div class="content-wrapper">
 		<section class="skills-viewer" ng-controller="SkillController">
-			<ul class="fill-space" focusable-objects>
+			<ul focusable-objects>
 				{{#each data.skills}}
 					<li ng-click="loadSkill('{{_id}}')" ng-class="{ active: activeSkill._id == '{{_id}}' && !hide }" focus-object>{{name}} <i></i></li>
 				{{/each}}

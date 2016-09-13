@@ -1,6 +1,6 @@
 <article class="module">
 	<div class="content-wrapper box">
-		<section class="profile flexbox">
+		<section class="profile">
 			<div>
 				<h1>Contact</h1>
 				<p>If you are interested in what I do and how I do it don't hesitate to reach out to me. I am especially interested in gaming related projects as it is a big part of my life and my career, but my interest extends to any out of the ordinary projects that aim to give a new perspective.</p>
@@ -14,30 +14,30 @@
 <article class="module" ng-controller="ContactFormController">
 	<div class="content-wrapper contact-form">
 		<form ng-submit="send()">
-			<div class="flexbox justify-space-around fieldset">
+			<fieldset>
 				<div>
 					<div class="form-group">
 						<label for="name">Name</label>
-						<input type="text" id="name" ng-model="email.name" />
+						<input type="text" id="name" ng-model="email.name"  maxlength="50" />
 					</div>
 					<div class="form-group">
 						<label for="email">Email</label>
-						<input type="text" id="email" ng-model="email.email" />
+						<input type="text" id="email" ng-model="email.email"  maxlength="100" />
 					</div>
 					<div class="form-group">
 						<label for="subject">Subject</label>
-						<input type="text" id="subject" ng-model="email.subject" />
+						<input type="text" id="subject" ng-model="email.subject"  maxlength="100" />
 					</div>
 				</div>
 				<div>
 					<div class="form-group">
 						<label for="message">Message</label>
-						<textarea id="message" ng-model="email.message"></textarea>
+						<textarea id="message" ng-model="email.message" maxlength="500"></textarea>
 					</div>
 					<div class="g-recaptcha" data-theme="dark" data-sitekey="6LfbjRgTAAAAAHXP29bnsw9I0DqVg7SlXUApPhlK"></div>
 					<button>Submit</button>
 				</div>
-			</div>
+			</fieldset>
 		</form>	
 	</div>
 </article>
