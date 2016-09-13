@@ -36,24 +36,12 @@
 }
 
 //Media Queries
-.media-desktop-small(@styles) {
-	@media screen and (max-width: 1024px) {
-		@styles();
-	}
-}
 
 .media-mobile(@styles) {
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
 		@styles();
 	}
 }
-
-.media-mobile-small(@styles) {
-	@media screen and (max-width: 480px) {
-		@styles();
-	}
-}
-
 
 //Functions
 .clear {

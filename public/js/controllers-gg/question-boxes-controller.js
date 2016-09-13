@@ -17,7 +17,7 @@ vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'Q
 		});
 	}
 
-	$scope.loadQuestion = function(e, sample){
+	$scope.loadQuestion = function(sample){
 		QuestionService.getRandom().then(function(response){
 			sample.hide = true;
 			$timeout(function(){

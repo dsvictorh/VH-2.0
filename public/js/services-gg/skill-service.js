@@ -4,7 +4,7 @@ vh.factory('SkillService', ['$http', function($http){
 	service.get = function(id){
 		return $http({
 			url: '/api/skill/' + id,
-			type: 'GET',
+			method: 'GET',
 			dataType: 'json',
 		});
 	};
@@ -12,7 +12,7 @@ vh.factory('SkillService', ['$http', function($http){
 	service.getFirst = function(){
 		return $http({
 			url: '/api/skill/first',
-			type: 'GET',
+			method: 'GET',
 			dataType: 'json',
 		});
 	};

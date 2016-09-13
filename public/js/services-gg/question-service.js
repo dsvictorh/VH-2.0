@@ -4,7 +4,7 @@ vh.factory('QuestionService', ['$http', function($http){
 	service.getRandom = function(){
 		return $http({
 			url: '/api/question/random',
-			type: 'GET',
+			method: 'GET',
 			dataType: 'json',
 		});
 	};

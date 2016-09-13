@@ -4,7 +4,7 @@ vh.factory('SampleService', ['$http', function($http){
 	service.list = function(){
 		return $http({
 			url: '/api/sample/list',
-			type: 'GET',
+			method: 'GET',
 			dataType: 'json',
 		});
 	};

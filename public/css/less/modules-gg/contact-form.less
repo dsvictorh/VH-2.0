@@ -1,13 +1,41 @@
 .contact-form{
 	form{
-	    > div{
-	    	&:first-child{
-	    		flex-grow: 1;
-	    	}
+		button{
+	    	background: @color-primary-button;
+	    	color: @color-white;
+			float: right;
+			font-size: 2rem;
+			border-radius: 5px;
+			box-shadow: 15px 7px 60px 0 @color-black;
 
-	    	&:last-child{
-    		    flex-grow: 3;
-    			margin-left: 50px;
+	    	&:hover{
+	    		background: @color-danger;
+	    	}	
+
+	    	&:focus{
+	    		outline: none;
+	    	}
+    	}
+
+    	.g-recaptcha{
+    		float: left;
+    		box-shadow: 15px 7px 60px 0 @color-black;
+    	}
+
+	    .fieldset{
+			.clear;
+
+	    	> div{
+	    		&:first-child{
+	    		    width: 35%;
+				    margin-right: 5%;
+				    float: left;
+		    	}
+
+		    	&:last-child{
+	    		    width: 60%;
+    				float: left;
+		    	}
 	    	}
 	    }
 
@@ -27,10 +55,19 @@
 			    padding: 5px;
 			    border-radius: 5px;
 			    box-sizing: border-box;
+			    border: 2px solid transparent;
+			    box-shadow: 15px 7px 60px 0 @color-black;
+			    font-family: inherit;
+
+			    &:focus{
+			    	border-color: @color-danger;
+			    	outline: none;
+			    }
+
 	    	}
 
 	    	textarea{
-	    		height: 192px;
+	    		height: 205px;
 	    		resize: none;
 	    	}
 	    }

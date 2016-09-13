@@ -2,14 +2,42 @@
 	> figure{
 	    width: 250px;
 	    height: 250px;
-	    background: #676767;
 	    border-radius: 5px;
-	    border: 3px inset @color-danger;
-	    border-style: ridge;
+	    border: 3px ridge;
 	    margin: 30px 20px;
 	    cursor: pointer;
 	    position: relative;
 	    box-shadow: 15px 15px 60px 0 @color-black;
+
+	    &:nth-child(6n + 1){
+	    	color: @color-yellow;
+	    	border-color: @color-yellow;
+	    }
+
+	    &:nth-child(6n + 2){
+	    	color: @color-green;
+	    	border-color: @color-green;
+	    }
+
+	    &:nth-child(6n + 3){
+	    	color: @color-purple;
+	    	border-color: @color-purple;
+	    }
+
+		&:nth-child(6n + 4){
+	    	color: @color-purple;
+	    	border-color: @color-purple;
+	    }
+
+	    &:nth-child(6n + 5){
+	    	color: @color-yellow;
+	    	border-color: @color-yellow;
+	    }
+
+	    &:nth-child(6n + 6){
+	    	color: @color-green;
+	    	border-color: @color-green;
+	    } 
 
 	    &.asking{
 	    	.question-form{
@@ -19,6 +47,9 @@
 	    }
 
 	    &.right{
+			border-color: @color-primary-button;
+			border-style: solid;
+
 	    	.question-form p{
 	    		color: @color-green;
 	    	}
@@ -26,8 +57,6 @@
 	    	.question{
 	    		display: none;
 	    	}
-
-	    	border-color: @color-primary-button;
 	    }
 
 	    &.wrong{
@@ -65,6 +94,7 @@
 		z-index: 1;
 		position: absolute;
 		top: 0;
+		background: @color-primary-button;
 
 		.animation(
 		 fadeIn,
@@ -163,7 +193,6 @@
 	}
 
 	.question{
-		color: @color-danger;
 		position: absolute;
 	    font-size: 15rem;
 	    width: 100%;

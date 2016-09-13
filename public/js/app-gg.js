@@ -1,8 +1,16 @@
-var vh = angular.module('vh-gg', ['ngSanitize']).config(function($interpolateProvider){
+var vh = angular.module('vh-gg', ['ngSanitize']).config(function($interpolateProvider, $httpProvider){
 	$interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+
+	$httpProvider.defaults.cache = false;
+    if (!$httpProvider.defaults.headers.get) {
+  		$httpProvider.defaults.headers.get = {};
+    }
+
+ 	$httpProvider.defaults.headers.get['If-Modified-Since'] = '0';
 }).run(function($rootScope, $timeout) {
 	var warningsTimeout;
 	var errorsTimeout;
+	var messagesTimeout;
 
 	$rootScope.modalTemplate = null;
     $rootScope.currentYear = new Date().getFullYear();
@@ -21,6 +29,16 @@ var vh = angular.module('vh-gg', ['ngSanitize']).config(function($interpolatePro
     			errorsTimeout = null;
 	    		$rootScope.errors = null;
 	    	}, 5500);
+    	}
+    });
+
+
+    $rootScope.$watch('messages', function(){
+    	if(!messagesTimeout && $rootScope.messages){
+    		messagesTimeout = $timeout(function(){
+    			messagesTimeout = null;
+	    		$rootScope.messages = null;
+	    	}, 3500);
     	}
     });
 

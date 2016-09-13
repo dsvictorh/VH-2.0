@@ -4,7 +4,7 @@ vh.factory('HiddenDialogueService', ['$http', function($http){
 	service.list = function(){
 		return $http({
 			url: '/api/hiddenDialogue/list',
-			type: 'GET',
+			method: 'GET',
 			dataType: 'json',
 		});
 	};

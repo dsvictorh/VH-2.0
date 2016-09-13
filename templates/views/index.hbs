@@ -1,6 +1,6 @@
 <article class="module no-bottom-space hero hidden-vh">
 	<div class="content-wrapper">
-		<section class="text-image flexbox">
+		<section class="text-image">
 			<div>
 				<h1>{{data.content.title}}</h1>
 				<p>{{data.content.titleFirstParagraph}}</p>
@@ -22,7 +22,7 @@
 </article>
 <article class="module hide-vh">
 	<div class="content-wrapper">
-		<section class="skills-viewer flexbox" ng-controller="SkillController">
+		<section class="skills-viewer" ng-controller="SkillController">
 			<ul class="fill-space" focusable-objects>
 				{{#each data.skills}}
 					<li ng-click="loadSkill('{{_id}}')" ng-class="{ active: activeSkill._id == '{{_id}}' && !hide }" focus-object>{{name}} <i></i></li>

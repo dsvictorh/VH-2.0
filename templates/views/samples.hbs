@@ -8,7 +8,7 @@
 <article class="module" ng-controller="QuestionBoxesController">
 	<div class="content-wrapper flexbox justify-center flex-wrap question-boxes">
 		<figure ng-repeat="sample in samples track by sample._id" ng-class="{right: sample.right, wrong: sample.wrong, answered: sample.answered, asking: sample.asking}">
-			<p class="question" ng-class="{hide: sample.hide}" ng-click="loadQuestion($event, sample)"></p>
+			<p class="question" ng-class="{hide: sample.hide}" ng-click="loadQuestion(sample)"></p>
 			<form class="question-form">
 				<p>{[{sample.question.response || sample.question.question}]}</p>
 				<label ng-repeat="answer in sample.question.answers track by $index">
