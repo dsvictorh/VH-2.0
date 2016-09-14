@@ -1,4 +1,5 @@
 var keystone = require('keystone');
+var ContactPage = keystone.list('ContactPage');
 
 exports = module.exports = function(req, res) {
 	
@@ -17,6 +18,13 @@ exports = module.exports = function(req, res) {
 		content: null,
 	}
 
+	view.on('init', function(next){
+		ContactPage.model.findOne()
+			.exec(function(err, result){
+				locals.data.content = result;
+				next(err);
+			});
+	});
 
 	// Render the view
 	view.render('contact');

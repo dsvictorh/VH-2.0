@@ -1,5 +1,5 @@
 .skills-viewer{
-	> ul{
+	> div > ul{
 		font-size: 3rem;
 	    text-transform: uppercase;
 	    letter-spacing: 5px;
@@ -86,15 +86,11 @@
 	.viewer{
 		float: left;
 	    width: 60%;
-	    padding: 20px;
 	    background: @color-black;
 	    box-shadow: 15px 15px 60px 0px @color-black;
 	    border-radius: 5px;
-	    box-sizing: border-box;
-	    opacity: 0;
-        height: 450px;
     	overflow: hidden;
-	    .transition(opacity 0.5s 0.7s linear);
+	    .transition(max-height 0.5s 0.2s linear);
 
 	    .media-mobile({
 			width: 100%;
@@ -102,14 +98,21 @@
 	    });
 
 	    &.active{
-	    	opacity: 1;
-    	 	.transition(opacity 0.4s 0.5s linear);
+	    	figure{
+	    		opacity: 1;
+	    	}
+	    }
+
+	    > div{
+	    	padding: 20px;
 	    }
 
 	    figure{
 	    	width: 120px;
 		    text-align: center;
 		    font-weight: 700;
+		    opacity: 0;
+		    .transition(opacity 0.4s 0.5s linear);
 
 		    &:nth-child(3n + 1){
 		    	color: @color-yellow;

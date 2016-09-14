@@ -1,8 +1,15 @@
-<article class="module no-bottom-space">
-	<div class="content-wrapper box">
-		<h1>{{data.content.title}}</h1>
-		<p>{{data.content.titleFirstParagraph}}</p>
-		<p>{{data.content.titleSecondParagraph}}</p>
+<article class="module no-bottom-space hero">
+	<div class="content-wrapper">
+		<section class="text-image">
+			<div>
+				<h1>{{data.content.title}}</h1>
+				<p>{{data.content.titleFirstParagraph}}</p>
+				<p>{{data.content.titleSecondParagraph}}</p>
+			</div>
+			<figure>
+				<img src="{{data.content.titleImage}}" />
+			</figure>
+		</section>
 	</div>
 </article>
 <article class="module" ng-controller="QuestionBoxesController">

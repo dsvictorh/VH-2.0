@@ -14,7 +14,9 @@ var SamplesPage = new keystone.List('SamplesPage', {
 SamplesPage.add({
 	title: { type: Types.Text, initial: true, max: 15, required: true },
 	titleFirstParagraph: { type: Types.Textarea, initial: true, max: 150, required: true },
-	titleSecondParagraph: { type: Types.Textarea, initial: true, max: 150, required: true }
+	titleSecondParagraph: { type: Types.Textarea, initial: true, max: 150, required: true },
+	titleImage: { type: Types.Url, initial: true, required: true, default: '/img/samples/uh-oh.png' },
+	heroBackground:  { type: Types.Url, initial: true, required: true, default: '/img/samples/samples-hero.jpg' },
 });
 
 
@@ -22,5 +24,5 @@ SamplesPage.add({
  * Registration
  */
 
-SamplesPage.defaultColumns = 'title, titleFirstParagraph, titleSecondParagraph';
+SamplesPage.defaultColumns = 'title, titleFirstParagraph, titleSecondParagraph, titleImage, heroImage';
 SamplesPage.register();

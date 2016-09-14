@@ -6,7 +6,7 @@
 				<p>{{data.content.titleFirstParagraph}}</p>
 				<p>{{data.content.titleSecondParagraph}}</p>
 			</div>
-			<figure class="align-end">
+			<figure>
 				<img src="{{data.content.titleImage}}" />
 			</figure>
 		</section>
@@ -23,23 +23,25 @@
 <article class="module hide-vh">
 	<div class="content-wrapper">
 		<section class="skills-viewer" ng-controller="SkillController">
-			<ul focusable-objects>
-				{{#each data.skills}}
-					<li ng-click="loadSkill('{{_id}}')" ng-class="{ active: activeSkill._id == '{{_id}}' && !hide }" focus-object>{{name}} <i></i></li>
-				{{/each}}
-			</ul>
-			<div class="viewer" ng-class="{ active: viewerActive }">
-				<div class="flexbox justify-space-around flex-wrap">
-					<percentage-circle title="{[{activeSkill.meterSkill1}]}" percentage="{[{activeSkill.meterSkillPercentage2}]}"></percentage-circle>
-					<percentage-circle title="{[{activeSkill.meterSkill2}]}" percentage="{[{activeSkill.meterSkillPercentage2}]}"></percentage-circle>
-					<percentage-circle title="{[{activeSkill.meterSkill3}]}" percentage="{[{activeSkill.meterSkillPercentage3}]}"></percentage-circle>	
-				</div>
-				<div class="details">
-					<h4>{[{activeSkill.extraSkillsTitle}]}</h4>
-					<ul>
-						<li ng-repeat="skill in activeSkill.extraSkills track by $index">{[{skill}]}</li>
-					</ul>
-					<p>{[{activeSkill.description}]}</p>
+			<div>
+				<ul focusable-objects>
+					{{#each data.skills}}
+						<li ng-click="loadSkill('{{_id}}')" ng-class="{ active: activeSkill._id == '{{_id}}' && !hide }" focus-object>{{name}} <i></i></li>
+					{{/each}}
+				</ul>
+				<div class="viewer" ng-class="{ active: viewerActive }">
+					<div class="flexbox justify-space-around flex-wrap">
+						<percentage-circle title="{[{activeSkill.meterSkill1}]}" percentage="{[{activeSkill.meterSkillPercentage1}]}"></percentage-circle>
+						<percentage-circle title="{[{activeSkill.meterSkill2}]}" percentage="{[{activeSkill.meterSkillPercentage2}]}"></percentage-circle>
+						<percentage-circle title="{[{activeSkill.meterSkill3}]}" percentage="{[{activeSkill.meterSkillPercentage3}]}"></percentage-circle>	
+					</div>
+					<div class="details">
+						<h4>{[{activeSkill.extraSkillsTitle}]}</h4>
+						<ul>
+							<li ng-repeat="skill in activeSkill.extraSkills track by $index">{[{skill}]}</li>
+						</ul>
+						<p>{[{activeSkill.description}]}</p>
+					</div>
 				</div>
 			</div>
 		</section>

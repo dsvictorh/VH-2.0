@@ -20,7 +20,9 @@ vh.controller('SkillController', ['$scope', '$rootScope', '$timeout', 'SkillServ
 				$scope.hide = true;
 
 				$timeout(function(){
-					$scope.activeSkill = null;
+					$scope.activeSkill.meterSkillPercentage1 = 0;
+					$scope.activeSkill.meterSkillPercentage2 = 0;
+					$scope.activeSkill.meterSkillPercentage3 = 0;
 				}, 1200);
 
 				$timeout(function(){
