@@ -58,6 +58,7 @@ exports = module.exports = function(app) {
 	app.get('/gamers', routes.views.gamers);
 	app.get('/samples', routes.views.samples);
 	app.get('/contact', routes.views.contact);
+	app.get('/space-shooter', routes.views.spaceShooter);
 	app.get('/legacy', routes.views.indexOld);
 
 	//API

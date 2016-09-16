@@ -313,6 +313,11 @@ h1{
     margin-bottom: 20px;
 }
 
+h2{
+	color: @color-white;
+	font-size: 4rem;	
+}
+
 p{
 	margin-bottom: 15px;
 
@@ -677,4 +682,26 @@ transform:scale(0.95) !important;
 -webkit-transform:scale(0.95) !important;
 transform-origin:0 0 !important;
 -webkit-transform-origin:0 0 !important;
+}
+
+//Unity styles
+.unity-wrapper{
+    height: 560px;
+    position: relative;
+
+    .media-mobile({
+		display: none;
+    });
+
+    canvas{
+    	.media-mobile({
+			display: none;
+    	});
+    }
+}
+
+
+.template-wrap{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
 }
