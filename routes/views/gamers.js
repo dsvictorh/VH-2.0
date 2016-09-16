@@ -1,18 +1,13 @@
 var keystone = require('keystone');
-var ContactPage = keystone.list('ContactPage');
+var GamersPage = keystone.list('GamersPage');
 
 exports = module.exports = function(req, res) {
 	
 	var view = new keystone.View(req, res);
 	var locals = res.locals;
 	
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
-	locals.recaptcha = true;
 	locals.footerClass = 'transparent';
 	locals.scripts = [
-		{url: '/js/controllers-gg/contact-form-controller.js'},
-		{url: '/js/services-gg/email-service.js'}
 	];
 
 	locals.data = {
@@ -20,7 +15,7 @@ exports = module.exports = function(req, res) {
 	}
 
 	view.on('init', function(next){
-		ContactPage.model.findOne()
+		GamersPage.model.findOne()
 			.exec(function(err, result){
 				locals.data.content = result;
 				next(err);
@@ -28,6 +23,6 @@ exports = module.exports = function(req, res) {
 	});
 
 	// Render the view
-	view.render('contact');
+	view.render('gamers');
 	
 };

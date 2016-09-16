@@ -1,0 +1,44 @@
+<article class="module no-bottom-space hero">
+	<div class="content-wrapper">
+		<h1>{{data.content.title}}</h1>
+		<p>{{data.content.titleFirstParagraph}}</p>
+	</div>
+</article>
+<article class="module hero">
+	<div class="content-wrapper gamers">
+		<section class="stories">
+			<ul>
+				<li>
+					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.careerTitle}}</h2>
+					<figure>{{{data.content.careerAwesomeIcon}}}</figure>
+					<article>
+						{{{data.content.careerText}}}
+					</article>
+				</li>
+				<li>
+					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.socialTitle}}</h2>
+					<figure>{{{data.content.socialAwesomeIcon}}}</figure>
+					<article>
+						{{{data.content.socialText}}}
+					</article>
+				</li>
+				<li>
+					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.growingTitle}}</h2>
+					<figure>{{{data.content.growingAwesomeIcon}}}</figure>
+					<article>
+						{{{data.content.growingText}}}
+					</article>
+				</li>
+				<li>
+					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.gamingTitle}}</h2>
+					<figure class="mobile-hidden"><a href="/space-shooter">{{{data.content.gamingAwesomeIcon}}}</a></figure>
+					<figure class="desktop-hidden">{{{data.content.gamingAwesomeIcon}}}</figure>
+					<article>
+						{{{data.content.gamingText}}}
+					</article>
+				</li>
+			</ul>
+			<h3 class="mobile-hidden">{{data.content.spaceShooterCallout}}</h3>
+		</section>
+	</div>
+</article>

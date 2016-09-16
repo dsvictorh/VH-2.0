@@ -1,0 +1,71 @@
+.gamers{
+	.stories{
+		li{
+			.clear;
+		
+			h2{
+	    	    font-size: 3rem;
+			    margin-bottom: 20px;
+			    padding-bottom: 5px;
+			    border-bottom: solid rgba(255,255,255,0.2) 1px;
+
+		    	i{
+		    		font-family: @font-awesome;
+		    	}
+		    }
+
+
+			article{
+				padding: 20px;
+			    background: @color-primary-button;
+		        border-radius: 10px;
+			    margin-bottom: 35px;
+			    float: left;
+			    width: 70%;
+			    box-sizing: border-box;
+			    box-shadow: 15px 15px 60px 0 @color-black;
+
+			    .media-mobile({
+					width: 100%;
+					float: none;
+			    });
+
+				
+			}
+		    
+
+			figure{
+				font-family: @font-awesome;
+			    float: right;
+			    font-size: 15rem;
+			    text-align: center;
+			    margin-left: 2%;
+			    width: 28%;
+
+			    .media-mobile({
+					width: 100%;
+					float: none;
+					margin-left: 0;
+			    });
+			}
+		}
+
+		h3{
+		    font-size: 2rem;
+		}
+
+		.desktop-hidden{
+			display: none;
+
+			.media-mobile({
+				display: block;
+			});
+		}
+
+		.mobile-hidden{
+			.media-mobile({
+				display: none;
+			});
+		}
+	}
+}
