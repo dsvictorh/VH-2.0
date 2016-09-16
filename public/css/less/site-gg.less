@@ -222,11 +222,17 @@ main{
     	});
 
     	.media-mobile-small({
-			padding: 0 15px;
+			padding: 0 10px;
     	});
 
     	.transition(none);
     	.awesome-icon('\f071', @position: before, @color: #fff500, @size: 1.5rem, @margin-right: 5px);
+
+    	&:before{
+    		.media-mobile-small({
+				content: '';
+	    	});
+    	}
 
     	&:hover{
     		background: @color-danger;

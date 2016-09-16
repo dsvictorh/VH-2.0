@@ -99,7 +99,7 @@ exports.send = function(req, res){
 						        console.log(error);
 						    }else{
 						    	jsonResponse.status = 'success';
-						    	jsonResponse.messages.push('Thank you for your interest!');
+						    	jsonResponse.messages.push('Email Sent!');
 						    }
 
 						    res.status(error ? 500 : 200).json(jsonResponse);

@@ -231,6 +231,15 @@
 			 @timingFunction: @animationTimingFunction,
 			 @iterationCount: @animationIterationCount);
 
+			.media-mobile({
+				.animation(
+				 fadeOut,
+				 @duration: 1s, 
+				 @fillMode: forwards, 
+				 @direction: normal, 
+				 @timingFunction: linear);
+			});
+
 			.keyframes(fadeOut, {
 				0%{
 					opacity: 1;
