@@ -17,8 +17,7 @@ exports.getRandom = function(req, res){
 
 	result.then(function(result){
 		if(result.length){
-			console.log(Math.floor(Math.random() * (result.length - 1)));
-			jsonResponse.question = result[Math.floor(Math.random() * (result.length - 1))];
+			jsonResponse.question = result[Math.floor(Math.random() * result.length)];
 		}
 
 		jsonResponse.responseCode = 200;
