@@ -1,4 +1,5 @@
 vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'QuestionService', 'SampleService', function($scope, $rootScope, $timeout, QuestionService, SampleService){
+	var questions = [];
 	$scope.samples = [];
 	$scope.answerOption = {
 		option: null,
@@ -39,12 +40,15 @@ vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'Q
 	}
 
 	$scope.loadQuestion = function(sample){
-		QuestionService.getRandom().then(function(response){
+		QuestionService.getRandom(questions).then(function(response){
 			sample.hide = true;
+			questions.push(response.data.question._id);
+
 			$timeout(function(){
 				sample.wrong = false;
 				sample.asking = true;
 				sample.question = response.data.question;
+				
 			}, 1200);				
 		}, function(error){
 			$rootScope.errors = ['An error has occured. Please contact the admin and try again later'];
@@ -64,6 +68,7 @@ vh.controller('QuestionBoxesController', ['$scope', '$rootScope', '$timeout', 'Q
 			else{
 				sample.wrong = true;
 				sample.question.response = 'Incorrect! You\'ll have to try again';
+				questions.splice(questions.indexOf(sample.question._id), 1);
 			}
 
 			$timeout(function(){

@@ -1,10 +1,13 @@
 vh.factory('QuestionService', ['$http', function($http){
 	var service = {};
 
-	service.getRandom = function(){
+	service.getRandom = function(excludedQuestions){
 		return $http({
 			url: '/api/question/random',
-			method: 'GET',
+			method: 'POST',
+			data: {
+				exclude: excludedQuestions
+			},
 			dataType: 'json',
 		});
 	};

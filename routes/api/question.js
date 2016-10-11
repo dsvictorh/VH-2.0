@@ -3,9 +3,10 @@ var Question = keystone.list('Question');
 
 exports.getRandom = function(req, res){
 	var jsonResponse = {};
+	var excludedQuestions = req.body.exclude || [];
 
 	var result = new Promise(function(resolve, reject){
-		Question.model.find()
+		Question.model.find({_id: { $nin: excludedQuestions}})
 			.sort('sortOrder')
 			.exec(function(err, result){
 				if(err)
