@@ -7,8 +7,9 @@
 	    margin: 30px 20px;
 	    cursor: pointer;
 	    position: relative;
-	    box-shadow: 15px 15px 60px 0 @color-black;
+	    box-shadow: 15px 15px 60px 0 fade(@color-black, 60%);
 	    border-color: @color-danger;
+	    background: fade(@color-primary-button, 13%);
 
 	    &.asking{
 	    	.question-form{
