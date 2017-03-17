@@ -713,3 +713,17 @@ transform-origin:0 0 !important;
     background: rgba(0, 0, 0, 0.5);
     padding: 10px;
 }
+
+.desktop-hidden{
+	display: none;
+
+	.media-mobile({
+		display: block;
+	});
+}
+
+.mobile-hidden{
+	.media-mobile({
+		display: none;
+	});
+}

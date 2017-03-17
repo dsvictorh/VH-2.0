@@ -9,36 +9,35 @@
 		<section class="stories">
 			<ul>
 				<li>
-					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.careerTitle}}</h2>
-					<figure>{{{data.content.careerAwesomeIcon}}}</figure>
+					<h2><i>{{{data.content.careerAwesomeIcon}}}</i> {{data.content.careerTitle}}</h2>
 					<article>
 						{{{data.content.careerText}}}
 					</article>
 				</li>
 				<li>
-					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.socialTitle}}</h2>
-					<figure>{{{data.content.socialAwesomeIcon}}}</figure>
+					<h2><i>{{{data.content.socialAwesomeIcon}}}</i> {{data.content.socialTitle}}</h2>
 					<article>
 						{{{data.content.socialText}}}
 					</article>
 				</li>
 				<li>
-					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.growingTitle}}</h2>
-					<figure>{{{data.content.growingAwesomeIcon}}}</figure>
+					<h2><i>{{{data.content.growingAwesomeIcon}}}</i> {{data.content.growingTitle}}</h2>
 					<article>
 						{{{data.content.growingText}}}
 					</article>
 				</li>
 				<li>
-					<h2><i>{{{data.content.storiesAwesomeIcon}}}</i> {{data.content.gamingTitle}}</h2>
-					<figure class="mobile-hidden" focusable-objects><a href="/space-shooter" focus-object>{{{data.content.gamingAwesomeIcon}}}</a></figure>
-					<figure class="desktop-hidden">{{{data.content.gamingAwesomeIcon}}}</figure>
+					<h2 focusable-objects>
+						<i class="mobile-hidden"><a href="/space-shooter" focus-object>{{{data.content.gamingAwesomeIcon}}}</a></i> 
+						<i class="desktop-hidden">{{{data.content.gamingAwesomeIcon}}}</i> 
+						{{data.content.gamingTitle}}
+					</h2>
 					<article>
 						{{{data.content.gamingText}}}
 					</article>
 				</li>
 			</ul>
-			<h3 class="mobile-hidden">{{data.content.spaceShooterCallout}}</h3>
+			<!--<h3 class="mobile-hidden">{{data.content.spaceShooterCallout}}</h3>-->
 		</section>
 	</div>
 </article>
