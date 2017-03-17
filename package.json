@@ -13,9 +13,11 @@
     "keystone": "^0.3.16",
     "model-transform": "^2.0.0",
     "moment": "^2.10.6",
+    "mongoose": "^4.9.0",
     "nodemailer": "^2.1.0",
     "pug": "^0.1.0",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "unicode": "^0.6.1"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
