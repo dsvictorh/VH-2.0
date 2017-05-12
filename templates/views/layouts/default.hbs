@@ -103,7 +103,7 @@
 					<div focusable-objects>
 						<h2>{[{modalTemplate.name}]}</h2>
 						<p ng-bind-html="modalTemplate.description"></p>
-						<a href="{[{modalTemplate.git}]}" class="button" target="_blank" focus-object>Git Repository</a>
+						<a href="{[{modalTemplate.git}]}" class="button" target="_blank" ng-if="modalTemplate.git" focus-object>Git Repository</a>
 						<a href="{[{modalTemplate.url}]}" class="button" target="_blank" ng-if="modalTemplate.url" focus-object>See Sample</a>
 					</div>
 				</section>
