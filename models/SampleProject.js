@@ -16,7 +16,7 @@ SampleProject.add({
 	name: { type: Types.Text, initial: true, required: true },
 	description: { type: Types.Html, initial: true, required: true },
 	image: { type: Types.Url, initial: true, required: true},
-	git: { type: Types.Url, initial: true, required: true},
+	git: { type: Types.Url, initial: true},
 	url: { type: Types.Url, initial: true},
 });
 
